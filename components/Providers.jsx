@@ -1,4 +1,5 @@
 'use client'
+import { Suspense } from "react";
 import { Provider } from "react-redux";
 import { store } from "../redux/store/store";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +10,9 @@ import ScrollToTop from "./common/ScrollToTop";
 export default function Providers({ children }) {
   return (
     <Provider store={store}>
-      <GTMRouteListener />
+      <Suspense fallback={null}>
+        <GTMRouteListener />
+      </Suspense>
       <ScrollToTop />
       {children}
       <ToastContainer

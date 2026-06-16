@@ -137,7 +137,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 onClick={() => setCurrent(link.name)}
                 onMouseEnter={() => setCurrent(link.name)}
                 className={`relative font-semibold text-base transition-all duration-200 ${
@@ -240,7 +240,7 @@ export default function Header() {
                       {groupedCourses[activeCategory].items.map((item) => (
                         <Link
                           key={item.name}
-                          to={`/all-courses/${item.slug}`}
+                          href={`/all-courses/${item.slug}`}
                           onClick={() => {
                             setDesktopCoursesOpen(false);
                             setActiveCategory(null);
@@ -258,13 +258,13 @@ export default function Header() {
 
             {/* Other top menu links */}
             <Link
-              to="/internship"
+              href="/internship"
               className="transition text-base font-semibold"
             >
               Internship
             </Link>
             <Link
-              to="/placed-students"
+              href="/placed-students"
               className="transition text-base font-semibold"
             >
               Placed Students List
@@ -292,21 +292,21 @@ export default function Header() {
               {moreOpen && (
                 <div className="absolute right-0 top-full mt-0 bg-white text-black rounded shadow-lg min-w-[180px] z-[99999] flex flex-col">
                   <Link
-                    to="/interview-questions"
+                    href="/interview-questions"
                     onClick={() => setMoreOpen(false)}
                     className="px-4 py-2 hover:bg-gray-100"
                   >
                     Interview Questions
                   </Link>
                   <Link
-                    to="/resources"
+                    href="/tutorials"
                     onClick={() => setMoreOpen(false)}
                     className="px-4 py-2 hover:bg-gray-100"
                   >
                     Tutorials
                   </Link>
                   <Link
-                    to="/sample-resume"
+                    href="/sample-resume"
                     onClick={() => setMoreOpen(false)}
                     className="px-4 py-2 hover:bg-gray-100"
                   >
@@ -346,7 +346,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-semibold py-2 text-gray-700 hover:text-[#005BAC]"
               >
@@ -391,7 +391,7 @@ export default function Header() {
                           {cat.items.map((item) => (
                             <Link
                               key={item.name}
-                              to={`/all-courses/${item.slug}`}
+                              href={`/all-courses/${item.slug}`}
                               className="block py-1 text-gray-800 hover:text-[#005BAC]"
                               onClick={() => setMenuOpen(false)}
                             >
@@ -409,7 +409,7 @@ export default function Header() {
             {/* ✅ Extra links below All Courses */}
             <div className="mt-0 pt-0">
               <Link
-                to="/internship"
+                href="/internship"
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-semibold py-2 text-gray-700 hover:text-[#005BAC] block"
               >
@@ -417,7 +417,7 @@ export default function Header() {
               </Link>
 
               <Link
-                to="/placed-students"
+                href="/placed-students"
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-semibold py-2 text-gray-700 hover:text-[#005BAC] block"
               >
@@ -425,7 +425,7 @@ export default function Header() {
               </Link>
 
               <Link
-                to="/reviews"
+                href="/reviews"
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-semibold py-2 text-gray-700 hover:text-[#005BAC] block"
               >
@@ -433,7 +433,7 @@ export default function Header() {
               </Link>
 
               <Link
-                to="/blog"
+                href="/blog"
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-semibold py-2 text-gray-700 hover:text-[#005BAC] block"
               >
@@ -453,7 +453,7 @@ export default function Header() {
               {mobileMoreOpen && (
                 <div className="pl-4 pb-2 flex flex-col">
                   <Link
-                    to="/interview-questions"
+                    href="/interview-questions"
                     onClick={() => setMenuOpen(false)}
                     className="py-1 text-gray-800 hover:text-[#005BAC]"
                   >
@@ -461,7 +461,7 @@ export default function Header() {
                   </Link>
 
                   <Link
-                    to="/resources"
+                    href="/tutorials"
                     onClick={() => setMenuOpen(false)}
                     className="py-1 text-gray-800 hover:text-[#005BAC]"
                   >
@@ -469,7 +469,7 @@ export default function Header() {
                   </Link>
 
                   <Link
-                    to="/sample-resume"
+                    href="/sample-resume"
                     onClick={() => setMenuOpen(false)}
                     className="py-1 text-gray-800 hover:text-[#005BAC]"
                   >

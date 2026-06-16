@@ -18,7 +18,7 @@ export default function AdminLogin({ onLogin }) {
       onLogin?.(existing);
       router.push("/admin/course-enquired");
     }
-  }, [navigate, onLogin]);
+  }, [router, onLogin]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

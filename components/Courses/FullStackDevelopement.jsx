@@ -1109,7 +1109,7 @@ export default function FullStackCoursePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {courses.map((c, i) => (
               <Link
-                to={`/all-courses/${encodeURIComponent(c.title)}`}
+                href={`/all-courses/${encodeURIComponent(c.title)}`}
                 key={i}
                 className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-all cursor-pointer"
               >
