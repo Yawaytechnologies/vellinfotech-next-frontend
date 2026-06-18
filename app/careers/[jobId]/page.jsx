@@ -3,10 +3,10 @@ import { fetchJobPosts, fetchJobPostById } from "../../../lib/api";
 import JobDetailClient from "../../../components/JobDetailClient";
 
 export const revalidate = 3600;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const jobs = await fetchJobPosts();
-  return jobs.map((job) => ({ jobId: String(job.id) }));
+  return [];
 }
 
 export async function generateMetadata({ params }) {

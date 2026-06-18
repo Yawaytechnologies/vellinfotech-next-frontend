@@ -3,10 +3,10 @@ import BlogDetailClient from "../../../components/BlogDetailClient";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3600;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const posts = await fetchBlogPosts();
-  return posts.map((post) => ({ id: String(post.id) }));
+  return [];
 }
 
 export async function generateMetadata({ params }) {
