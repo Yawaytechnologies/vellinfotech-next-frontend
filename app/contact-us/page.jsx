@@ -237,7 +237,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-clip bg-[#F7FAFF] dark:bg-[#F7FAFF] mt-0 md:mt-12">
+    <div className="min-h-screen relative overflow-clip bg-[#F7FAFF] dark:bg-[#F7FAFF] pt-[82px] md:pt-[150px]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -268,11 +268,11 @@ export default function Contact() {
 
       {/* ============================== Hero ============================== */}
       <section className="relative">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 md:py-12 lg:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 items-center">
             {/* LEFT */}
             <div>
-              <nav className="flex items-center gap-2 text-sm text-slate-600 mb-8">
+              <nav className="flex items-center gap-2 text-sm text-slate-600 mb-4 md:mb-8">
                 <a
                   href="/"
                   className="hover:text-[#005BAC] transition-colors font-medium"
@@ -294,7 +294,7 @@ export default function Contact() {
 
               <div className="relative inline-block">
                 <div className="pointer-events-none absolute -inset-8 bg-gradient-to-r from-[#005BAC]/15 via-[#FF5800]/15 to-[#005BAC]/15 blur-3xl" />
-                <h1 className="relative text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-transparent">
+                <h1 className="relative text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-transparent">
                   Let's Connect
                 </h1>
               </div>
@@ -333,8 +333,8 @@ export default function Contact() {
             </div>
 
             {/* RIGHT illustration */}
-            <div className="relative hidden lg:block">
-              <div className="relative ml-auto max-w-xl">
+            <div className="relative hidden md:block">
+              <div className="relative ml-auto w-full md:max-w-md lg:max-w-xl">
                 <div className="relative rounded-3xl overflow-hidden ring-1 ring-slate-200 shadow-2xl bg-white">
                   <img
                     src="/images/contact-us.jpg"

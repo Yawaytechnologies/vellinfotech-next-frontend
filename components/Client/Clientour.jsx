@@ -52,10 +52,10 @@ export default function OurClientsHeader({
         <circle cx="210" cy="210" r="210" fill="url(#g1)" />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl px-5 py-16 sm:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div className="relative mx-auto w-full max-w-[1800px] px-5 py-16 sm:px-6 sm:py-20 md:px-8 md:pt-[180px] md:pb-16 lg:px-12 xl:px-16 2xl:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 xl:gap-14 items-center">
           {/* Left copy */}
-          <div>
+          <div className="min-w-0">
             <span
               className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[13px] font-medium ring-1 ring-slate-200"
               style={{ background: BRAND.surface, color: BRAND.primary }}
@@ -64,7 +64,7 @@ export default function OurClientsHeader({
             </span>
 
             {/* Page H1 */}
-            <h1 id="clients-hero__h1" className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            <h1 id="clients-hero__h1" className="mt-5 text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold leading-tight">
               We help teams{" "}
               <span className="relative inline-block" style={{ color: BRAND.primary }}>
                 hire and upskill
@@ -136,7 +136,7 @@ export default function OurClientsHeader({
           </div>
 
           {/* Right hero image */}
-          <div className="relative">
+          <div className="relative w-full min-w-0">
             <div
               className="relative rounded-[28px] p-[2px] shadow-xl"
               style={{
@@ -149,7 +149,7 @@ export default function OurClientsHeader({
                   src={heroImage}
                   alt={heroAlt}
                   loading="eager"
-                  className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover transition duration-500 ease-out"
+                  className="w-full h-[280px] sm:h-[360px] md:h-[340px] lg:h-[420px] xl:h-[460px] 2xl:h-[520px] object-cover transition duration-500 ease-out"
                   onError={(e) => {
                     e.currentTarget.src = DEFAULT_HERO;
                   }}

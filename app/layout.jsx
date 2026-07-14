@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');`}</Script>
+})(window,document,'script','dataLayer','GTM-M53WZGF7');`}</Script>
         <style>{`
           .vell-toast-container{top:90px!important;width:100%!important;padding:0 12px!important;z-index:999999!important;}
           .vell-toast{border-radius:12px!important;}
@@ -42,7 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M53WZGF7"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Providers>
           <div className="min-h-screen flex flex-col bg-slate-50 md:bg-gradient-to-br md:from-[#0a2d55] md:to-[#051a30]">
             <Header />
-            <main className="flex-1 bg-transparent pt-[53px] md:pt-[87px]">
+            <main className="flex-1 bg-transparent pt-0 md:pt-0">
               {children}
             </main>
             <Footer />
