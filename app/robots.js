@@ -4,9 +4,15 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/admin/*"],
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/dashboard/",
+          "/login/",
+        ],
       },
     ],
     sitemap: "https://www.vellinfotech.com/sitemap.xml",
+    host: "https://www.vellinfotech.com",
   };
 }

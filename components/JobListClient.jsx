@@ -25,7 +25,7 @@ export default function JobListClient({ jobs }) {
         );
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 pt-12 sm:pt-28 pl-4 pb-16 text-slate-100">
+    <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 pt-[80px] md:pt-[170px] pl-4 pb-16 text-slate-100">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-indigo-600/25 blur-3xl animate-pulse" />

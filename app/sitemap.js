@@ -4,18 +4,18 @@ const BASE = "https://www.vellinfotech.com";
 
 const STATIC_ROUTES = [
   { url: `${BASE}/`, priority: 1.0, changeFrequency: "weekly" },
-  { url: `${BASE}/about`, priority: 0.8, changeFrequency: "monthly" },
-  { url: `${BASE}/reviews`, priority: 0.7, changeFrequency: "monthly" },
-  { url: `${BASE}/contact-us`, priority: 0.8, changeFrequency: "monthly" },
-  { url: `${BASE}/client`, priority: 0.6, changeFrequency: "monthly" },
-  { url: `${BASE}/placed-students`, priority: 0.7, changeFrequency: "monthly" },
-  { url: `${BASE}/sample-resume`, priority: 0.6, changeFrequency: "monthly" },
-  { url: `${BASE}/internship`, priority: 0.7, changeFrequency: "monthly" },
-  { url: `${BASE}/all-courses`, priority: 0.9, changeFrequency: "weekly" },
-  { url: `${BASE}/blog`, priority: 0.9, changeFrequency: "daily" },
-  { url: `${BASE}/careers`, priority: 0.8, changeFrequency: "daily" },
-  { url: `${BASE}/tutorials`, priority: 0.7, changeFrequency: "weekly" },
-  { url: `${BASE}/interview-questions`, priority: 0.7, changeFrequency: "monthly" },
+  { url: `${BASE}/about`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/reviews`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/contact-us`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/client`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/placed-students`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/sample-resume`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/internship`, priority: 1.0, changeFrequency: "monthly" },
+  { url: `${BASE}/all-courses`, priority: 1.0, changeFrequency: "weekly" },
+  { url: `${BASE}/blog`, priority: 1.0, changeFrequency: "daily" },
+  { url: `${BASE}/careers`, priority: 1.0, changeFrequency: "daily" },
+  { url: `${BASE}/tutorials`, priority: 1.0, changeFrequency: "weekly" },
+  { url: `${BASE}/interview-questions`, priority: 1.0, changeFrequency: "monthly" },
   { url: `${BASE}/privacy`, priority: 0.3, changeFrequency: "yearly" },
 ];
 
@@ -79,26 +79,26 @@ export default async function sitemap() {
   const interviewRoutes = INTERVIEW_SLUGS.map((slug) => ({
     url: `${BASE}/interview/${slug}`,
     changeFrequency: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   }));
 
   const tutorialRoutes = TUTORIAL_SLUGS.map((slug) => ({
     url: `${BASE}/tutorials/${slug}`,
     changeFrequency: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   }));
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${BASE}/blog/${post.id}`,
     changeFrequency: "weekly",
-    priority: 0.7,
+    priority: 0.8,
     lastModified: post.updatedAt || post.createdAt || new Date().toISOString(),
   }));
 
   const jobRoutes = jobs.map((job) => ({
     url: `${BASE}/careers/${job.id}`,
     changeFrequency: "weekly",
-    priority: 0.7,
+    priority: 0.8,
     lastModified: job.updatedAt || new Date().toISOString(),
   }));
 

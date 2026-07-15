@@ -21,14 +21,14 @@ export default function BannerSection() {
       id="hero"
       aria-labelledby="hero__heading"
       // ✅ FIX: removed mt-12 md:mt-20 (double spacing with layout <main> padding)
-      className="w-full pt-10 md:pt-26 flex flex-col md:flex-row items-center justify-between px-6 md:px-16 pb-12 text-gray-900 overflow-x-hidden"
+      className="w-full min-h-[calc(100vh-137px)] pt-[76px] md:pt-[120px] lg:pt-[137px] flex flex-col md:flex-row items-center justify-between gap-8 px-4 sm:px-6 md:px-8 lg:px-20 pb-10 md:pb-12 text-gray-900 overflow-x-hidden"
       style={{ background: "linear-gradient(to right, #005BAC, #003c6a)" }}
     >
       {/* LEFT */}
-      <div className="w-full md:w-1/2 flex flex-col gap-6 animate-fade-up">
+      <div className="w-full md:w-1/2 flex flex-col justify-center gap-6 animate-fade-up">
         <h1
           id="hero__heading"
-          className="text-4xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-white"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white"
         >
           Good <span className="text-[#00b4d8]">coaching</span> is
           <br /> good teaching & <br /> nothing else.
@@ -56,15 +56,15 @@ export default function BannerSection() {
       </div>
 
       {/* RIGHT */}
-      <div className="w-full md:w-1/2 mt-10 md:mt-0 flex flex-col items-center md:items-end justify-center relative animate-float">
-        <div className="flex flex-col md:flex-row items-center gap-6">
+      <div className="w-full md:w-1/2 mt-6 md:mt-0 flex flex-col items-center md:items-end justify-center relative animate-float">
+        <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-center lg:justify-end lg:gap-8">
           <img
             src="/images/education1.png"
             alt="Student learning and coaching illustration"
-            className="h-[320px] md:h-[360px] object-contain"
+           className="h-[180px] sm:h-[220px] md:h-[240px] lg:h-[420px] max-w-full object-contain"
           />
 
-          <div className="bg-white shadow-md rounded-lg px-5 py-4 max-w-xs border-l-4 border-[#00b4d8] text-left">
+          <div className="bg-white shadow-md rounded-lg px-5 py-4 max-w-[280px] sm:max-w-xs border-l-4 border-[#00b4d8] text-left">
             <h3 className="text-sm font-semibold text-gray-800 mb-1">
               Ronald Richards
             </h3>

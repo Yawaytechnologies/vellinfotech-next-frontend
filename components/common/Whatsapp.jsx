@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -8,10 +8,16 @@ export default function Whatsapp({
   message = "Hi! I’d like to know more.",
   variant = "float", // "float" | "bounce"
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const digits = phone.replace(/[^\d]/g, "");
   const href = `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
 
-  if (typeof document === "undefined") return null;
+  if (!mounted) return null;
 
   return createPortal(
     <>

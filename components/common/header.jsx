@@ -133,7 +133,7 @@ export default function Header() {
           </div>
 
           {/* Top Nav */}
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-8 h-full">
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-1.5 lg:gap-4 h-full">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -158,7 +158,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Numbers */}
-          <div className="hidden md:flex items-center justify-end gap-2 lg:gap-6">
+          <div className="hidden md:flex items-center justify-end gap-1 lg:gap-3">
             <div className="flex flex-col items-end leading-tight">
               <span className="font-semibold text-sm md:text-md text-gray-800">
                 Enquiry:

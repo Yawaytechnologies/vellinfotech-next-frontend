@@ -29,7 +29,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/all-courses/FullStackDevelopement",
+        source: "/all-courses/FullStackDevelopment",
         destination: "/all-courses/full-stack-development-course",
         permanent: true,
       },

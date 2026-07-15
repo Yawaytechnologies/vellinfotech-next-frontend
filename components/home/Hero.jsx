@@ -44,7 +44,7 @@ export default function HeroSlider() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.99 }}
           transition={{ duration: 0.45 }}
-          className="absolute inset-0 w-full h-full object-cover object-right z-0"
+          className="absolute inset-0 w-full h-full object-fill z-0"
           draggable={false}
         />
       </AnimatePresence>
@@ -70,11 +70,11 @@ export default function HeroSlider() {
       </button>
 
       {/* Overlay content */}
-      <div className="relative z-20 w-full h-full flex items-center justify-center md:justify-start px-2 sm:px-6 md:px-16">
+      <div className="relative z-20 w-full h-full flex items-center justify-center md:justify-start px-3 sm:px-4 md:px-8 lg:px-12">
         <div
           className="
             w-full max-w-[95vw] xs:max-w-[22rem] sm:max-w-md md:max-w-xl
-            bg-background rounded-xl p-3 xs:p-5 md:p-8 shadow-lg backdrop-blur-sm flex flex-col relative
+            bg-background rounded-xl p-3 xs:p-5 md:p-8 shadow-lg backdrop-blur-sm flex flex-col 
           "
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
@@ -115,7 +115,7 @@ export default function HeroSlider() {
           </div>
 
           {/* Mobile arrows */}
-          <div className="flex md:hidden absolute left-1/2 -translate-x-1/2 -bottom-16 gap-8 z-30 pb-4">
+          <div className="flex md:hidden absolute left-1/2 -translate-x-1/2 bottom-4 gap-8 z-30">
             <button
               type="button"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 shadow border border-[#005BAC]/10"

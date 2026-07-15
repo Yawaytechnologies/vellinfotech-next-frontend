@@ -38,11 +38,19 @@ export default function JobDetailClient({ job }) {
   const [noticePeriod, setNoticePeriod] = useState("");
   const [currentCtc, setCurrentCtc] = useState("");
   const [coverMessage, setCoverMessage] = useState("");
+  const [submittedKeys, setSubmittedKeys] = useState([]);
 
   useEffect(() => {
     dispatch(clearApplyStatus());
     setCoverMessage("");
   }, [dispatch, job?.id]);
+  useEffect(() => {
+  if (!applySuccessMessage || submittedKeys.length === 0) return;
+
+  submittedKeys.forEach((key) => {
+    localStorage.setItem(key, "true");
+  });
+}, [applySuccessMessage, submittedKeys]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -110,7 +118,7 @@ export default function JobDetailClient({ job }) {
     : null;
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 px-4 pt-16 sm:pt-20 md:pt-28 pb-16 text-slate-100">
+    <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 px-4 pt-[100px] sm:pt-[110px] md:pt-[170px] pb-16 text-slate-100">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-4 h-64 w-64 rounded-full bg-indigo-600/25 blur-3xl animate-pulse" />
