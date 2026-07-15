@@ -282,7 +282,7 @@ export default function ScrumMaster() {
           {/* LEFT: Content */}
           <div className="flex-1">
             <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
-              Join Our 100% Job Guaranteed
+              Join Our 100%          .Job Guaranteed
             </p>
 
             {/* H1 — keyword only, whole line yellow */}
