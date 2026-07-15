@@ -287,7 +287,7 @@ export default function ScrumMaster() {
 
             {/* H1 — keyword only, whole line yellow */}
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400">
-              Business Analyst Program
+              Business             Analyst Program
             </h1>
 
             <ul className="space-y-3 mt-6 text-lg">
