@@ -1,12 +1,13 @@
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
-import Header from "../components/common/header";
-import Footer from "../components/common/Footer";
-import Whatsapp from "../components/common/Whatsapp";
 import Providers from "../components/Providers";
+import LayoutWrapper from "../components/common/LayoutWrapper";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://www.vellinfotech.com"),
@@ -19,43 +20,75 @@ export const metadata = {
   openGraph: {
     siteName: "Vell InfoTech",
     type: "website",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
-        <Script id="gtm-script" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M53WZGF7');`}</Script>
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+          (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-M53WZGF7');
+          `}
+        </Script>
+
         <style>{`
-          .vell-toast-container{top:90px!important;width:100%!important;padding:0 12px!important;z-index:999999!important;}
-          .vell-toast{border-radius:12px!important;}
-          @media(max-width:767px){.vell-toast-container{top:60px!important;}}
+          .vell-toast-container{
+            top:90px!important;
+            width:100%!important;
+            padding:0 12px!important;
+            z-index:999999!important;
+          }
+
+          .vell-toast{
+            border-radius:12px!important;
+          }
+
+          @media(max-width:767px){
+            .vell-toast-container{
+              top:60px!important;
+            }
+          }
         `}</style>
       </head>
+
       <body>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-M53WZGF7"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{
+              display: "none",
+              visibility: "hidden",
+            }}
           />
         </noscript>
+
         <Providers>
           <div className="min-h-screen flex flex-col bg-slate-50 md:bg-gradient-to-br md:from-[#0a2d55] md:to-[#051a30]">
-            <Header />
-            <main className="flex-1 bg-transparent pt-0 md:pt-0">
-              {children}
-            </main>
-            <Footer />
-            <Whatsapp phone="+91 9600593838" variant="float" />
+            <LayoutWrapper>{children}</LayoutWrapper>
           </div>
         </Providers>
       </body>

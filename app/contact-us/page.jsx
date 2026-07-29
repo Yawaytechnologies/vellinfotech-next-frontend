@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // src/pages/Contact.jsx
 import React, { useState } from "react";
@@ -36,7 +36,7 @@ export default function Contact() {
     { label: "Email", href: "mailto:contact@velinfotech.com", icon: MailIcon },
     {
       label: "Directions",
-      href: "https://maps.google.com/?q=Vel+Infotech+Chennai",
+      href: "https://www.google.com/maps/place/Vell+InfoTech+Pvt.+Ltd/@13.0205,80.2097,17z",
       icon: PinIcon,
       target: "_blank",
     },
@@ -240,7 +240,9 @@ export default function Contact() {
     <div className="min-h-screen relative overflow-clip bg-[#F7FAFF] dark:bg-[#F7FAFF] pt-[82px] md:pt-[150px]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <ToastContainer
         newestOnTop
@@ -402,8 +404,8 @@ export default function Contact() {
                     <Row
                       icon={PinIcon}
                       label="Location"
-                      value="View on Google Map"
-                      href="https://maps.google.com/?q=Vel+Infotech+Chennai"
+                      value="Open in Google Maps"
+                      href="https://maps.google.com/?cid=YOUR_GOOGLE_BUSINESS_CID"
                       external
                     />
                   </div>
@@ -764,12 +766,14 @@ export default function Contact() {
                 </span>
               </div>
             </div>
-            <div className="relative w-full h-[400px]">
+            <div className="relative h-[320px] w-full sm:h-[380px] lg:h-[450px]">
               <iframe
-                title="Vell Infotech on Google Maps"
-                src="https://www.google.com/maps?q=Vel+Infotech+Chennai&output=embed"
-                className="absolute inset-0 w-full h-full grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                title="Vell InfoTech, Ekkattuthangal, Chennai"
+                src="https://www.google.com/maps?q=Vell%20InfoTech%2C%20No.4%2F38%2C%202nd%20Main%20Road%2C%20Kalaimagal%20Nagar%2C%20Ekkattuthangal%2C%20Chennai%2C%20Tamil%20Nadu%20600032&output=embed"
+                className="absolute inset-0 h-full w-full border-0 grayscale-[0.15] transition-all duration-700 group-hover:grayscale-0"
                 loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>

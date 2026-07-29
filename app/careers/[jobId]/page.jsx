@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { fetchJobPosts, fetchJobPostById } from "../../../lib/api";
 import JobDetailClient from "../../../components/JobDetailClient";
 
-export const revalidate = 3600;
-export const dynamicParams = true;
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   return [];
