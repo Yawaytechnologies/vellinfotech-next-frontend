@@ -279,12 +279,12 @@ export default function FullStackCoursePage() {
 
       {/* HERO */}
       <section
-        className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20"
+        className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 2xl:px-12 pt-20 pb-20 md:pt-52 lg:pt-48 xl:pt-44 2xl:pt-48"
         aria-labelledby="course-title"
       >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* LEFT */}
-          <div className="flex-1">
+         <div className="w-full lg:w-[58%] lg:flex-none">
             {/* Marketing line (not a heading) */}
             <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
@@ -351,7 +351,7 @@ export default function FullStackCoursePage() {
           </div>
 
           {/* RIGHT CTA */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full max-w-xl mx-auto bg-white text-black p-5 sm:p-6 lg:p-8 rounded-xl shadow-lg lg:w-[38%] lg:max-w-none lg:flex-none lg:mx-0">
             {/* H3 inside hero to keep single H1 on page */}
             <h3 className="text-2xl font-bold mb-4">Want an IT Job?</h3>
             <p className="mb-4 text-lg">

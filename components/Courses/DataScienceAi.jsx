@@ -276,20 +276,20 @@ export default function JavaCoursePage() {
   ];
   return (
     <>
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] px-4 pb-20 pt-[84px] text-white sm:px-6 md:pt-[190px] lg:px-8 2xl:px-12">
+        <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)] lg:gap-12 xl:gap-16">
           {/* LEFT: Content */}
-          <div className="flex-1">
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+          <div className="w-full min-w-0">
+            <p className="mb-2 text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl 2xl:text-5xl">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — keyword only, whole line yellow */}
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400">
+            <h1 className="mb-4 break-words text-3xl font-bold leading-tight text-yellow-400 sm:text-4xl lg:text-5xl 2xl:text-6xl">
               Data Science & AI Program
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="mt-6 space-y-3 text-base leading-7 sm:text-lg sm:leading-8">
               <li>
                 ✅ Join the <strong>Best Data Science Institute</strong> to
                 master AI, ML, and analytics.
@@ -344,7 +344,7 @@ export default function JavaCoursePage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="mx-auto w-full max-w-xl rounded-xl bg-white p-5 text-black shadow-lg sm:p-6 lg:mx-0 lg:max-w-none lg:p-8">
             <h2 className="text-2xl font-bold mb-4">WANT IT JOB?</h2>
             <p className="mb-4 text-lg">
               Become a Data Science & AI Expert in 3 Months
@@ -376,8 +376,8 @@ export default function JavaCoursePage() {
         </div>
 
         {/* Info Bar (supporting text, not a heading) */}
-        <div className="w-full mt-12 bg-[#1e88e5] py-5 rounded-md shadow-md">
-          <p className="text-center text-white font-bold text-xl md:text-2xl">
+        <div className="mx-auto mt-10 w-full max-w-[1800px] rounded-md bg-[#1e88e5] px-4 py-5 shadow-md md:mt-12">
+          <p className="text-center text-base font-bold text-white sm:text-xl lg:text-2xl">
             Offering{" "}
             <strong>Online and Offline Data Science & Ai Training</strong> in
             <strong> Chennai & Bangalore</strong>

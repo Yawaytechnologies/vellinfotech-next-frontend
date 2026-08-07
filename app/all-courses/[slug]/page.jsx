@@ -183,13 +183,13 @@ const COURSE_MAP = {
       "cyber security course chennai, ethical hacking training, network security course, information security training",
   },
   "hardware-and-networking-program": {
-    component: HardwareNetworking,
-    title: "Hardware and Networking Program in Chennai",
-    description:
-      "Learn computer hardware, network configuration, CCNA concepts, and IT support skills with Vell InfoTech's Hardware and Networking Program in Chennai.",
-    keywords:
-      "hardware networking course chennai, CCNA training, networking course, IT hardware training chennai",
-  },
+  component: HardwareNetworking,
+  title: "Hardware and Networking Course in Chennai",
+  description:
+    "Join the Hardware and Networking Course in Chennai at Vell InfoTech. Get practical training in computer hardware, LAN/WAN, routers, switches, IP addressing, troubleshooting and placement assistance.",
+  keywords:
+    "hardware networking course chennai, hardware course in chennai, networking course in chennai, LAN WAN training, router switch training, hardware engineer course",
+ },
   "product-management-program": {
     component: ProductManagement,
     title: "Product Management Program in Chennai",
@@ -260,6 +260,7 @@ export function generateMetadata({ params }) {
       title: `${course.title} | Vell InfoTech`,
       description: course.description,
       url: `https://www.vellinfotech.com/all-courses/${params.slug}`,
+      type: "website",
     },
   };
 }

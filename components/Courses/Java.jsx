@@ -259,10 +259,10 @@ export default function JavaCoursePage() {
 
       {/* HERO */}
       <section
-        className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20"
+        className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 pt-20 pb-20 md:pt-48 lg:pt-44 xl:pt-40 2xl:pt-44 "
         aria-labelledby="course-title"
       >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* LEFT */}
           <div className="flex-1">
             {/* Marketing line (not a heading) */}

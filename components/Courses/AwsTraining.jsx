@@ -270,7 +270,7 @@ export default function JavaCoursePage() {
     <>
       <section
         aria-labelledby="course-title"
-        className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20"
+       className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] px-4 pb-16 pt-[90px] text-white sm:px-6 md:pt-[180px] lg:px-8 lg:pb-20"
       >
         {/* Toasts */}
         <ToastContainer
@@ -282,17 +282,17 @@ export default function JavaCoursePage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-12">
           {/* LEFT: Content */}
-          <div className="flex-1">
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+          <div className="w-full min-w-0">
+            <p className="mb-2 break-words text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+             className="mb-4 break-words text-3xl font-bold leading-tight text-yellow-400 sm:text-4xl lg:text-5xl"
             >
               AWS Training Program
             </h1>
@@ -302,7 +302,7 @@ export default function JavaCoursePage() {
               Amazon Web Services Certification-Oriented Cloud Training
             </h2>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="mt-6 space-y-3 text-base leading-7 sm:text-lg sm:leading-8">
               <li>
                 ✅ Enroll in the <strong>Top AWS Training Institute</strong> to
                 master cloud computing with AWS.
@@ -360,8 +360,7 @@ export default function JavaCoursePage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
-            <h3 className="text-2xl font-bold mb-4">WANT IT JOB?</h3>
+          <div className="w-full self-start rounded-xl bg-white p-5 text-black shadow-lg sm:p-6 lg:max-w-md lg:justify-self-end">
             <p className="mb-4 text-lg">
               Become an AWS Cloud Expert in 3 Months
             </p>
@@ -392,8 +391,8 @@ export default function JavaCoursePage() {
         </div>
 
         {/* Info Bar */}
-        <div className="w-full mt-12 bg-[#1e88e5] py-5 rounded-md shadow-md">
-          <h2 className="text-center text-white font-bold text-xl md:text-2xl">
+        <div className="mx-auto mt-10 w-full max-w-7xl rounded-md bg-[#1e88e5] px-4 py-5 shadow-md md:mt-12">
+          <h2 className="text-center text-base font-bold text-white sm:text-xl lg:text-2xl">
             Offering <strong>Online and Offline AWS Training</strong> in
             <strong> Chennai &amp; Bangalore</strong>
           </h2>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast, Slide } from "react-toastify";
@@ -274,8 +274,7 @@ export default function JavaCoursePage() {
 
   return (
     <>
-
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
+      <section className="w-full bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 2xl:px-12 pt-24 md:pt-44 xl:pt-48 pb-10 md:pb-14 xl:pb-20">
         {/* Toasts */}
         <ToastContainer
           newestOnTop
@@ -286,23 +285,55 @@ export default function JavaCoursePage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div
+          className="mx-auto w-full max-w-[1800px] px-0 sm:px-2 lg:px-4 2xl:px-8 flex flex-col xl:flex-row items-center justify-between gap-10 xl:gap-14 2xl:gap-20 "
+        >
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full xl:w-[60%] 2xl:w-[62%] text-center xl:text-left">
             {/* Intro line ABOVE H1 (as requested) */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p
+              className="
+  text-2xl
+  sm:text-3xl
+  md:text-3xl
+  xl:text-4xl
+  2xl:text-5xl
+  font-bold
+  leading-tight
+  mb-2
+"
+            >
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+              className="
+  text-4xl
+  sm:text-5xl
+  md:text-5xl
+  xl:text-6xl
+  2xl:text-7xl
+  font-bold
+  leading-tight
+  mb-4
+  text-yellow-400
+"
             >
-              Hardware &amp; Networking Program
+              Hardware and Networking Course in Chennai
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul
+              className="
+  mt-8
+  space-y-4
+  text-base
+  sm:text-lg
+  xl:text-xl
+  leading-8
+"
+            >
               <li>
                 ✅ Enroll in the{" "}
                 <strong>Top Hardware &amp; Networking Institute</strong> to
@@ -343,7 +374,7 @@ export default function JavaCoursePage() {
             <button
               type="button"
               onClick={scrollToForm}
-              className="group relative bg-neutral-800 h-auto min-h-[64px] w-full sm:w-80 border border-white text-left p-4 text-gray-50 text-base font-bold rounded-lg overflow-hidden
+              className="group relative bg-neutral-800 h-auto min-h-[64px] w-full sm:w-96 xl:w-[420px] border border-white text-left p-4 text-gray-50 text-base font-bold rounded-lg overflow-hidden
                 mt-8
                 before:absolute before:w-12 before:h-12 before:content-[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg
                 after:absolute after:z-10 after:w-20 after:h-20 after:content-[''] after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg
@@ -366,7 +397,21 @@ export default function JavaCoursePage() {
 
           {/* RIGHT: Call to Action */}
           <aside
-            className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md"
+            className="
+  w-full
+  sm:max-w-lg
+  xl:max-w-none
+  xl:w-[36%]
+  2xl:w-[34%]
+  bg-white
+  text-black
+  p-6
+  lg:p-8
+  rounded-xl
+  shadow-xl
+  mx-auto
+  xl:mx-0
+"
             aria-labelledby="cta-heading"
           >
             <h2 id="cta-heading" className="text-2xl font-bold mb-4">
@@ -379,7 +424,13 @@ export default function JavaCoursePage() {
             <button
               type="button"
               onClick={scrollToForm}
-              className="relative mt-6 px-6 py-3 overflow-hidden rounded-full border-2 border-black bg-black text-white font-semibold text-base shadow-xl flex items-center justify-center gap-2 group transition-all duration-300 w-fit"
+              className="
+relative
+mt-8
+w-full
+sm:w-auto
+px-8
+py-4 overflow-hidden rounded-full border-2 border-black bg-black text-white font-semibold text-base shadow-xl flex items-center justify-center gap-2 group transition-all duration-300 w-fit"
             >
               <span className="absolute inset-0 z-0 before:absolute before:w-full before:aspect-square before:-left-full before:-top-1/2 before:bg-emerald-500 before:rounded-full before:transition-all before:duration-700 before:ease-in-out group-hover:before:left-0 group-hover:before:scale-150 before:-z-10"></span>
               <span className="relative z-10 group-hover:text-black transition-colors duration-300">
@@ -509,12 +560,12 @@ export default function JavaCoursePage() {
               <div className="w-28 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div>
 
               <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed text-center md:text-left">
-                Our Hardware &amp; Networking Training program is designed to
-                build strong foundational and practical skills in computer
-                hardware, networking, and system administration. Learn to
-                troubleshoot hardware issues, configure networks, and manage
-                system security, making you job-ready for IT support and
-                infrastructure roles.
+                Vell InfoTech offers a job-oriented Hardware and Networking
+                Course in Chennai designed for students, freshers and working
+                professionals. The course provides practical training in
+                computer hardware, system assembly, operating system
+                installation, LAN and WAN configuration, routers, switches, IP
+                addressing, network security and troubleshooting.
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-5">
@@ -733,6 +784,105 @@ export default function JavaCoursePage() {
           cardMinH={400}
           stickyOffset={110}
         />
+
+        {/* Learning Outcomes */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#003c6a] mb-8">
+              Learning Outcomes
+            </h2>
+
+            <p className="text-lg font-semibold mb-6">
+              By the end of this Hardware & Networking Program, you will be able
+              to:
+            </p>
+
+            <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+              <li>
+                Understand the fundamentals of computer hardware, networking,
+                and IT infrastructure.
+              </li>
+              <li>
+                Assemble, configure, troubleshoot, and maintain desktop and
+                laptop computers.
+              </li>
+              <li>Install and manage Windows and Linux operating systems.</li>
+              <li>
+                Configure Local Area Networks (LAN), Wide Area Networks (WAN),
+                and wireless networks.
+              </li>
+              <li>
+                Perform IP addressing, subnetting, and network troubleshooting
+                using industry-standard tools.
+              </li>
+              <li>
+                Configure routers, switches, and basic network security
+                settings.
+              </li>
+              <li>
+                Set up and manage servers, user accounts, file sharing, and
+                network resources.
+              </li>
+              <li>
+                Diagnose and resolve hardware failures, network connectivity
+                issues, and system performance problems.
+              </li>
+              <li>
+                Implement cybersecurity best practices to protect systems and
+                networks.
+              </li>
+              <li>
+                Gain hands-on experience with virtualization technologies and
+                cloud networking fundamentals.
+              </li>
+              <li>
+                Work with network monitoring and diagnostic tools for efficient
+                infrastructure management.
+              </li>
+              <li>
+                Develop practical skills through real-time lab sessions and
+                industry-oriented projects.
+              </li>
+              <li>
+                Prepare confidently for interviews and industry certification
+                exams.
+              </li>
+              <li>
+                Build the technical expertise required for entry-level Hardware
+                Engineer, Network Engineer, Desktop Support Engineer, System
+                Administrator, and IT Support roles.
+              </li>
+            </ul>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#003c6a] mt-14 mb-8">
+              After Completing This Course, You Will Be Ready To
+            </h2>
+
+            <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+              <li>
+                Install, configure, and troubleshoot computer systems
+                independently.
+              </li>
+              <li>
+                Design and maintain small to medium-sized computer networks.
+              </li>
+              <li>Configure routers, switches, and wireless access points.</li>
+              <li>
+                Resolve hardware and software issues in enterprise environments.
+              </li>
+              <li>Manage network security and user access effectively.</li>
+              <li>
+                Support organizations with reliable IT infrastructure and
+                technical assistance.
+              </li>
+              <li>
+                Pursue careers as a Hardware Engineer, Network Engineer, Desktop
+                Support Engineer, Technical Support Engineer, System
+                Administrator, or IT Infrastructure Engineer.
+              </li>
+            </ul>
+          </div>
+        </section>
 
         {/* === WHY CHOOSE US === */}
         <section

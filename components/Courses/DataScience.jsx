@@ -287,21 +287,21 @@ export default function DataScienceCoursePage() {
   return (
     <>
 
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 2xl:px-12 pt-[96px] md:pt-[190px] pb-20">
+        <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)] lg:gap-12 xl:gap-16">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full min-w-0">
             {/* Marketing line (not H1) */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — keyword only, whole line yellow */}
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight mb-4 text-yellow-400 break-words">
               Data Science Training Program
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="mt-6 space-y-3 text-base leading-7 sm:text-lg sm:leading-8">
               <li>
                 ✅ Join the <strong>Best Data Science Institute</strong> to
                 master analytics and machine learning skills.
@@ -360,7 +360,7 @@ export default function DataScienceCoursePage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="mx-auto w-full max-w-xl rounded-xl bg-white p-5 text-black shadow-lg sm:p-6 lg:mx-0 lg:max-w-none lg:p-8">
             <h3 className="text-2xl font-bold mb-4">WANT IT JOB?</h3>
             <p className="mb-4 text-lg">
               Become a Data Science Professional in 3 Months with{" "}

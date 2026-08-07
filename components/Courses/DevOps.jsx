@@ -275,7 +275,7 @@ export default function DevOpsCoursePage() {
   return (
     <>
 
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] px-4 pb-16 pt-[80px] text-white sm:px-6 md:pt-[180px] lg:px-8 lg:pb-20">
         {/* Toasts */}
         <ToastContainer
           newestOnTop
@@ -286,24 +286,24 @@ export default function DevOpsCoursePage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full min-w-0">
             {/* Intro line above H1 (as requested) */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="mb-2 break-words text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+              className="mb-4 break-words text-3xl font-bold leading-tight text-yellow-400 sm:text-4xl lg:text-5xl"
             >
               DevOps Training Program
             </h1>
 
             {/* Supporting bullets remain paragraph-level content */}
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="mt-6 space-y-3 text-base leading-7 sm:text-lg sm:leading-8">
               <li>
                 ✅ Enroll in the <strong>Top DevOps Training Institute</strong>{" "}
                 to master CI/CD and automation workflows.
@@ -368,7 +368,7 @@ export default function DevOpsCoursePage() {
 
           {/* RIGHT: Call to Action */}
           <aside
-            className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md"
+            className="w-full self-start rounded-xl bg-white p-5 text-black shadow-lg sm:p-6 md:max-w-md md:justify-self-end"
             aria-labelledby="cta-heading"
           >
             <h2 id="cta-heading" className="text-2xl font-bold mb-4">
@@ -405,7 +405,7 @@ export default function DevOpsCoursePage() {
 
         {/* Info Bar */}
         <div
-          className="w-full mt-12 bg-[#1e88e5] py-5 rounded-md shadow-md"
+          className="mx-auto mt-10 w-full max-w-7xl rounded-md bg-[#1e88e5] px-4 py-5 shadow-md md:mt-12"
           aria-label="Training Locations"
         >
           <p className="text-center text-white font-bold text-xl md:text-2xl">

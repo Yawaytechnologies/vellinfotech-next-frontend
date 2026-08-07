@@ -1650,7 +1650,7 @@ export const SYLLABI = {
     ],
   },
   hardwarenetworking: {
-    title: "Hardware & Networking Online Training — Syllabus",
+    title: "Hardware and Networking Course Syllabus",
     accent: "#005BAC",
     meta: {
       duration: "8–10 weeks",

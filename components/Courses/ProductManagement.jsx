@@ -274,10 +274,10 @@ export default function ScrumMaster() {
   ];
   return (
     <>
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] px-4 pt-[82px] pb-20 text-white sm:px-6 md:pt-[190px] lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-stretch justify-between gap-8 md:flex-row md:items-start md:gap-10 lg:gap-12">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full min-w-0 md:flex-1">
             <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
@@ -351,7 +351,7 @@ export default function ScrumMaster() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full self-start rounded-xl bg-white p-5 text-black shadow-lg sm:p-6 md:max-w-md md:flex-1">
             <h2 className="text-2xl font-bold mb-4">WANT IT JOB?</h2>
             <p className="mb-4 text-lg">
               Become a Product Management Expert in 3 Months

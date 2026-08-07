@@ -284,27 +284,27 @@ export default function PythonCoursePage() {
     <>
 
       <section
-        className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20"
+        className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 2xl:px-12 pt-20 pb-20 md:pt-56 lg:pt-52 xl:pt-48 2xl:pt-52"
         aria-labelledby="course-title"
       >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* LEFT: Content */}
           {/* LEFT: Content (hero) */}
-          <div className="flex-1">
+          <div className="w-full lg:w-[58%] lg:flex-none">
             {/* Eyebrow line: visually big, not a heading (keeps SEO clean) */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — keyword only, whole line yellow */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+              className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight mb-4 text-yellow-400 break-words"
             >
               Python Full Stack Developer Course
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="mt-6 space-y-3 text-base leading-7 sm:text-lg sm:leading-8">
               <li>
                 ✅ Join the <strong>Best Python Training Institute</strong> to
                 master Core &amp; Advanced Python.
@@ -360,7 +360,7 @@ export default function PythonCoursePage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full max-w-xl mx-auto bg-white text-black p-5 sm:p-6 lg:p-8 rounded-xl shadow-lg lg:mx-0 lg:w-[38%] lg:max-w-none lg:flex-none">
             {/* Use H3 here to keep a single H1 on the page */}
             <h3 className="text-2xl font-bold mb-4">WANT IT JOB?</h3>
             <p className="mb-4 text-lg">

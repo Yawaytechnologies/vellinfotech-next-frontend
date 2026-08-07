@@ -280,17 +280,17 @@ export default function PlsqlCoursePage() {
   return (
     <>
 
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 2xl:px-12 pt-20 pb-20 md:pt-52 lg:pt-48 xl:pt-44 2xl:pt-48">
+        <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full lg:w-[58%] lg:flex-none">
             {/* Keep the marketing line, but not as a heading */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — keyword only, whole line yellow */}
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight mb-4 text-yellow-400 break-words">
               PL/SQL Developer Course
             </h1>
 
@@ -341,7 +341,7 @@ export default function PlsqlCoursePage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full max-w-xl mx-auto bg-white text-black p-5 sm:p-6 lg:p-8 rounded-xl shadow-lg lg:w-[38%] lg:max-w-none lg:flex-none lg:mx-0">
             <h2 className="text-2xl font-bold mb-4">WANT IT JOB?</h2>
             <p className="mb-4 text-lg">
               Master <strong>Full Stack Development</strong> in just 3 months
