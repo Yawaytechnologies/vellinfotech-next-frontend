@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
@@ -83,7 +83,7 @@ export default function TutorialsPage() {
       (t) =>
         t.title.toLowerCase().includes(q) ||
         t.excerpt.toLowerCase().includes(q) ||
-        t.categories.some((c) => c.toLowerCase().includes(q))
+        t.categories.some((c) => c.toLowerCase().includes(q)),
     );
   }, [query]);
 
@@ -91,8 +91,7 @@ export default function TutorialsPage() {
     <section className="bg-background min-h-screen">
       {/* Hero */}
       <div
-        className="relative w-full mt-[54px] sm:mt-[100px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px]
-                   flex items-center justify-start px-3 sm:px-4 md:px-8 lg:px-10"
+        className="relative w-full mt-[60px] sm:mt-[100px] md:mt-[134px] lg:mt-[134px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px] flex items-center justify-start px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20"
         style={{
           backgroundImage: "url(/images/tutorials.jpg)",
           backgroundRepeat: "no-repeat",

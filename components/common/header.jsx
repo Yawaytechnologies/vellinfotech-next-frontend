@@ -306,6 +306,26 @@ export default function Header() {
                           ))}
 
                           <Link
+                            href="/careers"
+                            onClick={() => {
+                              setConsultingOpen(false);
+                              setActiveConsultingMenu(null);
+                            }}
+                            className="mb-2 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10 hover:text-white"
+                          >
+                            <div>
+                              <span className="block text-sm font-semibold">
+                                Careers
+                              </span>
+                              <span className="mt-0.5 block text-[11px] text-slate-400">
+                                Explore career opportunities
+                              </span>
+                            </div>
+
+                            <FiChevronRight size={18} />
+                          </Link>
+
+                          <Link
                             href="/consulting"
                             onClick={() => {
                               setConsultingOpen(false);
@@ -350,7 +370,7 @@ export default function Header() {
                                 </h4>
                               </div>
 
-                              <div className="max-h-[390px] space-y-1 overflow-y-auto pr-1">
+                              <div className=" max-h-[390px] space-y-1 overflow-y-auto pr-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ">
                                 {consultingMenus[
                                   activeConsultingMenu
                                 ].items.map((item, itemIndex) => (
@@ -452,23 +472,32 @@ export default function Header() {
             >
               <button
                 type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDesktopCoursesOpen((prev) => !prev);
+
+                  if (!desktopCoursesOpen) {
+                    setActiveCategory(0);
+                  }
+                }}
                 className="transition flex items-center gap-1 focus:outline-none hover:text-white/90"
               >
                 All Courses <span className="text-xs">▾</span>
               </button>
 
               {desktopCoursesOpen && (
-                <div className="absolute left-0 top-full mt-0 bg-white text-black rounded-lg shadow-lg min-w-[260px] z-[99999] flex flex-row overflow-visible">
-                  <div className="flex flex-col w-64 rounded-l-lg">
+                <div className="absolute left-0 top-full mt-0 bg-white text-black rounded-lg shadow-lg min-w-[260px] z-[99999] flex flex-row overflow-visible max-h-[calc(100vh-135px)]">
+                  <div className="flex flex-col w-64 rounded-l-lg max-h-[calc(100vh-170px)] overflow-y-auto">
                     {groupedCourses.map((cat, idx) => (
                       <div
                         key={cat.category}
-                        className={`px-5 py-3 text-[15px] font-medium cursor-pointer transition-all whitespace-nowrap flex items-center justify-between ${
+                        className={`px-3 py-2 lg:px-5 lg:py-2 text-[13px] lg:text-[15px] font-medium cursor-pointer transition-all whitespace-nowrap flex items-center justify-between ${
                           activeCategory === idx
                             ? "bg-[#f0f4fa] text-[#005BAC]"
                             : "hover:bg-gray-100 text-gray-800"
                         }`}
                         onMouseEnter={() => setActiveCategory(idx)}
+                        onClick={() => setActiveCategory(idx)}
                       >
                         <span>{cat.category}</span>
                         <FiChevronRight
@@ -491,7 +520,7 @@ export default function Header() {
                             setDesktopCoursesOpen(false);
                             setActiveCategory(null);
                           }}
-                          className="px-7 py-3 text-gray-800 hover:bg-[#f3f8fe] hover:text-[#005BAC] rounded-r-lg transition-all text-[15px] font-normal whitespace-nowrap"
+                          className="px-4 py-2 lg:px-7 lg:py-2 text-gray-800 hover:bg-[#f3f8fe] hover:text-[#005BAC] rounded-r-lg transition-all text-[13px] lg:text-[15px] font-normal whitespace-nowrap"
                         >
                           {item.name}
                         </Link>
@@ -670,6 +699,18 @@ export default function Header() {
                           )}
                         </div>
                       ))}
+
+                      <Link
+                        href="/careers"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setMobileConsultingOpen(false);
+                          setMobileConsultingCategory(null);
+                        }}
+                        className="block rounded-lg px-3 py-2 mt-1 text-sm font-semibold text-gray-700 hover:bg-slate-50 hover:text-[#005BAC]"
+                      >
+                        Careers
+                      </Link>
                     </div>
                   )}
                 </div>

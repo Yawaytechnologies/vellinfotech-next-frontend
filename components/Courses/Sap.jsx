@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast, Slide } from "react-toastify";
@@ -274,8 +274,7 @@ export default function JavaCoursePage() {
 
   return (
     <>
-
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 pt-24 md:pt-44 lg:pt-48 pb-10 md:pb-14 lg:pb-20">
         {/* Toasts — single instance at top */}
         <ToastContainer
           newestOnTop
@@ -286,9 +285,9 @@ export default function JavaCoursePage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8 md:gap-6 lg:gap-10">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full md:w-[58%] md:flex-none text-left">
             {/* Intro line ABOVE H1 */}
             <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
@@ -357,7 +356,7 @@ export default function JavaCoursePage() {
 
           {/* RIGHT: Call to Action */}
           <aside
-            className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md"
+            className="w-full md:w-[38%] md:flex-none bg-white text-black p-5 lg:p-6 rounded-xl shadow-lg md:max-w-md md:ml-auto self-start"
             aria-labelledby="cta-heading"
           >
             <h2 id="cta-heading" className="text-2xl font-bold mb-4">

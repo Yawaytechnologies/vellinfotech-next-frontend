@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
 import { FaGlobe, FaCalendarAlt, FaTag } from "react-icons/fa";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const interviews = [
   {
@@ -92,30 +92,39 @@ function InterviewCard({ title, date, description, route, image }) {
 
 export default function InterviewQuestionsPage() {
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="bg-background min-h-screen"
-    >
+    <main className="bg-background min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative w-full mt-[43px] sm:mt-[100px] h-[250px] sm:h-[320px] md:h-[390px]
-                   flex items-center justify-start px-3 sm:px-4 md:px-10 lg:px-10"
+        className="
+    relative w-full
+    mt-[54px] sm:mt-[100px]
+    h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px]
+    flex items-center justify-start
+    px-3 sm:px-4 md:px-8 lg:px-10
+    overflow-hidden
+  "
         style={{
-          backgroundImage: "url(/images/interview.png)",
+          backgroundImage: "url('/images/interview.png')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
         }}
         aria-labelledby="interview-page-heading"
       >
+        <div className="absolute inset-0 bg-black/10" />
+
         <h1
           id="interview-page-heading"
-          className="relative z-10 text-white font-extrabold leading-snug
-                     text-[20px] sm:text-[28px] md:text-[36px] lg:text-[42px]
-                     max-w-[90%] sm:max-w-[75%] md:max-w-[600px]
-                     tracking-wide text-left drop-shadow-md"
+          className="
+      relative z-10
+      text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px]
+      max-w-[95%] sm:max-w-[80%] md:max-w-[720px]
+      tracking-wide
+      text-left
+      font-bold
+      text-white
+      drop-shadow-[0_2px_4px_rgba(0,0,0,0.75)]
+    "
         >
           Explore Interview Guides
         </h1>
@@ -134,7 +143,11 @@ export default function InterviewQuestionsPage() {
         </h2>
 
         {interviews.map((item) => (
-          <article key={item.id} className="mb-10" aria-labelledby={`${item.id}-heading`}>
+          <article
+            key={item.id}
+            className="mb-10"
+            aria-labelledby={`${item.id}-heading`}
+          >
             <h2 id={`${item.id}-heading`} className="sr-only">
               {item.title}
             </h2>
@@ -148,6 +161,6 @@ export default function InterviewQuestionsPage() {
           </article>
         ))}
       </section>
-    </motion.main>
+    </main>
   );
 }

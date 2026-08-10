@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect } from "react";
 import Link from "next/link";
@@ -37,9 +37,15 @@ const CONTENT = {
             <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
               <p className="text-slate-700 mb-2 font-semibold">MVT Flow</p>
               <ul className="space-y-2 text-slate-700">
-                <li>HTTP request → <strong>URLConf (urls.py)</strong> → View</li>
-                <li>View ↔ <strong>Model (models.py)</strong> via ORM</li>
-                <li>View → <strong>Template (.html)</strong> → HTTP response</li>
+                <li>
+                  HTTP request → <strong>URLConf (urls.py)</strong> → View
+                </li>
+                <li>
+                  View ↔ <strong>Model (models.py)</strong> via ORM
+                </li>
+                <li>
+                  View → <strong>Template (.html)</strong> → HTTP response
+                </li>
               </ul>
             </div>
           </>
@@ -66,10 +72,17 @@ const CONTENT = {
                   <span>
                     {parts[0]}
                     {parts[1] && (
-                      <code className="ml-2 rounded bg-slate-100 px-1 py-0.5">{parts[1]}</code>
+                      <code className="ml-2 rounded bg-slate-100 px-1 py-0.5">
+                        {parts[1]}
+                      </code>
                     )}
                     {parts[2] && (
-                      <> <code className="rounded bg-slate-100 px-1 py-0.5">{parts[2]}</code></>
+                      <>
+                        {" "}
+                        <code className="rounded bg-slate-100 px-1 py-0.5">
+                          {parts[2]}
+                        </code>
+                      </>
                     )}
                   </span>
                 </li>
@@ -294,8 +307,13 @@ git push -u origin main
         h: "Rebase vs Merge",
         body: (
           <ul className="mt-3 space-y-2 text-slate-800">
-            <li><strong>Merge:</strong> preserves history; adds a merge commit.</li>
-            <li><strong>Rebase:</strong> linear history; rewrites commits (avoid rebasing shared branches).</li>
+            <li>
+              <strong>Merge:</strong> preserves history; adds a merge commit.
+            </li>
+            <li>
+              <strong>Rebase:</strong> linear history; rewrites commits (avoid
+              rebasing shared branches).
+            </li>
           </ul>
         ),
       },
@@ -555,10 +573,10 @@ export default function TutorialDetailClient({ slug }) {
         <img
           src={meta.image}
           alt={meta.title}
-          className="w-full h-44 sm:h-56 md:h-72 lg:h-80 object-cover"
+          className="w-full h-44 sm:h-56 md:h-[280px] lg:h-[320px] xl:h-[360px] object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
-        <div className="absolute left-6 right-6 bottom-6 max-w-5xl mx-auto">
+        <div className="absolute inset-x-0 bottom-6 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
           <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-extrabold text-white leading-snug">
             {meta.title}
           </h1>
@@ -582,7 +600,7 @@ export default function TutorialDetailClient({ slug }) {
       </div>
 
       {/* Body + Sidebar */}
-      <div className="max-w-5xl mx-auto px-3 sm:px-4 mt-6 grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6 lg:gap-8">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px] gap-6 lg:gap-8">
         <div>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             {meta.excerpt}

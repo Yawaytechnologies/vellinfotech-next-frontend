@@ -39,41 +39,43 @@ export default async function BlogPage() {
           aria-hidden="true"
         />
 
-        <div className="relative max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 2xl:px-16 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 lg:gap-14">
           {/* Left: Text */}
-          <div className="w-full md:w-1/2 text-center md:text-left pl-3 md:pl-10 flex flex-col justify-center">
+          <div className="w-full md:w-1/2 text-center md:text-left px-0 md:pl-6 lg:pl-8 xl:pl-10 flex flex-col items-center md:items-start justify-center">
             <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 pl-3 pr-4 py-1 text-[10px] md:text-xs font-semibold tracking-wide uppercase mb-3">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-40" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
               </span>
-              Vel InfoTech Blog · Careers · Training · Hiring
+              Vell InfoTech Blog · Careers · Training · Hiring
             </div>
 
             <h1
               id="blog-page-title"
-              className="text-3xl md:text-4xl xl:text-5xl font-extrabold leading-tight mb-3 max-w-xl"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold leading-tight mb-3 max-w-2xl"
             >
               <span className="block">Insights on Tech</span>
               <span className="block">Careers, Training &amp; Hiring</span>
             </h1>
 
-            <p className="text-base md:text-lg text-white/90 mb-6 max-w-xl mx-auto md:mx-0">
+            <p className="text-sm sm:text-base md:text-lg lg:text-lg 2xl:text-xl text-white/90 mb-6 max-w-2xl mx-auto md:mx-0">
               No fluff. Just real stories, salary breakdowns, and step-by-step
               playbooks for learners, career switchers, and hiring teams who
               actually care about outcomes.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center md:justify-start w-full">
               <a
                 href="#latest-articles"
-                className="group inline-flex items-center justify-between gap-2 bg-black text-white font-semibold pl-5 pr-3 py-2.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.3)] whitespace-nowrap border border-black transition-all duration-300 ease-out hover:bg-emerald-500 hover:text-black hover:shadow-[0_10px_26px_rgba(0,0,0,0.45)]"
+                className="group inline-flex items-center justify-between gap-2 bg-black text-white font-semibold pl-5 pr-3 py-2.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.3)] whitespace-nowrap border border-black transition-all duration-300 ease-out hover:bg-emerald-500 hover:text-black"
               >
                 <span>Browse Latest Posts</span>
-                <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:scale-105 group-hover:text-emerald-600">
+
+                <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-white text-black transition-all duration-300 group-hover:translate-x-1">
                   <FiArrowRight className="text-sm" />
                 </span>
               </a>
+
               <p className="text-xs text-white/70">
                 Updated frequently with fresh, industry-relevant topics.
               </p>
@@ -81,16 +83,17 @@ export default async function BlogPage() {
           </div>
 
           {/* Right: Illustration */}
-          <div className="w-full md:w-1/2 flex justify-center">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
             <div className="relative">
               <div
                 className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-[#00E0FF]/30 via-white/5 to-[#00ffb3]/10 blur-xl"
                 aria-hidden="true"
               />
+
               <img
                 src="/images/career.jpg"
                 alt="People reading tech blog articles online"
-                className="relative w-[80%] max-w-md h-auto drop-shadow-2xl rounded-3xl"
+                className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[440px] xl:max-w-[500px] 2xl:max-w-[560px] h-auto mx-auto md:mx-0 drop-shadow-2xl rounded-3xl"
                 loading="eager"
               />
             </div>

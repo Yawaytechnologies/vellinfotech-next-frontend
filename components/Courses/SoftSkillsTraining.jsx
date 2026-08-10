@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast, Slide } from "react-toastify";
@@ -275,8 +275,7 @@ export default function SoftSkillPage() {
 
   return (
     <>
-
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-10 pt-32 md:pt-36 lg:pt-40 pb-10 lg:pb-14">
         {/* Toasts */}
         <ToastContainer
           newestOnTop
@@ -287,19 +286,19 @@ export default function SoftSkillPage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full lg:w-[58%] lg:flex-none">
             {/* Lead line above H1 */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
             {/* H1 — primary keyword */}
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-yellow-400">
               Soft Skills Training
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="space-y-3 mt-5 text-base sm:text-lg leading-7">
               <li>
                 ✅ Develop{" "}
                 <strong>
@@ -361,7 +360,7 @@ export default function SoftSkillPage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full lg:w-[38%] lg:flex-none bg-white text-black p-6 rounded-xl shadow-lg lg:max-w-md lg:mt-16">
             <h2 className="text-2xl font-bold mb-4">STAND OUT AT WORK!</h2>
             <p className="mb-4 text-lg">
               Enhance Your Soft Skills and Grow Your Career

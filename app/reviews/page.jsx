@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // Enhanced Review Page with Professional Design (White body under tabs)
 import React, { useEffect, useMemo, useState } from "react";
@@ -463,7 +463,7 @@ export default function Review() {
 }
 function Hero({ trendingCourses, overallRating, ratingHistogram, googleMeta }) {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden">
+    <section className="relative pt-24 md:pt-36 lg:pt-36 pb-16 overflow-hidden">
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#152A6B_0%,#1F3C88_45%,#7C3AED_100%)]" />
       {/* Subtle grid overlay */}
@@ -481,8 +481,8 @@ function Hero({ trendingCourses, overallRating, ratingHistogram, googleMeta }) {
         />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-white">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-12 xl:px-8 text-white">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left */}
           <div className="lg:col-span-7">
             <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6">
@@ -493,7 +493,7 @@ function Hero({ trendingCourses, overallRating, ratingHistogram, googleMeta }) {
 
             <div className="relative inline-block mb-4">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-2xl" />
-              <h1 className="relative text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+              <h1 className="relative text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-black leading-tight">
                 Student Success
                 <br />
                 <span className="bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
@@ -574,16 +574,22 @@ function HeroStats({
     <div className="lg:col-span-5">
       <div className="relative">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-3xl blur-xl opacity-60" />
-        <div className="relative rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 shadow-2xl text-white">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold">Institute Overview</h3>
+        <div className="relative rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 p-5 lg:p-8 shadow-2xl text-white">
+          <div className="flex items-center justify-between mb-6 md:mb-3 lg:mb-6">
+            <h3 className="text-xl md:text-base lg:text-xl font-bold">
+              {" "}
+              Institute Overview{" "}
+            </h3>
             <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full">
               Verified
             </span>
           </div>
 
-          <div className="flex items-end gap-4 mb-6 pb-6 border-b border-white/20">
-            <div className="text-6xl font-black">{overallRating}</div>
+          <div className="flex items-end gap-4 md:gap-2 mb-6 md:mb-3 lg:mb-6 pb-6 md:pb-3 lg:pb-6 border-b border-white/20">
+            <div className="text-6xl md:text-4xl lg:text-6xl font-black">
+              {" "}
+              {overallRating}
+            </div>
             <div>
               <div className="flex items-center gap-1 mb-1">
                 {[...Array(5)].map((_, i) => (
@@ -603,13 +609,13 @@ function HeroStats({
             </div>
           </div>
 
-          <div className="space-y-3 mb-6">
+          <div className="space-y-3 md:space-y-1.5 lg:space-y-3 mb-6 md:mb-3 lg:mb-6">
             {[5, 4, 3, 2, 1].map((star) => {
               const pct = ratingHistogram[star] || 0;
               return (
                 <div key={star} className="flex items-center gap-3">
                   <span className="font-semibold w-8">{star}★</span>
-                  <div className="flex-1 h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div className="flex-1 h-3 md:h-2 lg:h-3 bg-white/20 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-500"
                       style={{ width: `${pct}%` }}
@@ -624,15 +630,15 @@ function HeroStats({
           </div>
 
           <h4 className="text-sm font-semibold mb-3">Popular Courses</h4>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 md:grid md:grid-cols-2 lg:flex lg:flex-wrap">
             {trendingCourses.map((course, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-2 px-3 py-2 bg-white/10 border border-white/20 rounded-xl text-sm font-medium"
+                className="inline-flex items-center gap-2 px-3 py-2 md:gap-1 md:px-2 md:py-1 lg:gap-2 lg:px-3 lg:py-2 bg-white/10 border border-white/20 rounded-xl text-sm md:text-[11px] lg:text-sm font-medium"
               >
                 <span>{course.icon}</span>
                 {course.title}
-                <span className="px-2 py-0.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs rounded-full">
+                <span className="hidden lg:inline px-2 py-0.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs rounded-full">
                   {course.tag}
                 </span>
               </span>

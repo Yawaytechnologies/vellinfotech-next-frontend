@@ -285,55 +285,23 @@ export default function JavaCoursePage() {
           theme="colored"
         />
 
-        <div
-          className="mx-auto w-full max-w-[1800px] px-0 sm:px-2 lg:px-4 2xl:px-8 flex flex-col xl:flex-row items-center justify-between gap-10 xl:gap-14 2xl:gap-20 "
-        >
+        <div className="mx-auto w-full max-w-7xl px-0 sm:px-2 md:px-4 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-10 lg:gap-12">
           {/* LEFT: Content */}
-          <div className="w-full xl:w-[60%] 2xl:w-[62%] text-center xl:text-left">
+          <div className="w-full md:w-[58%] lg:w-[60%] text-left">
             {/* Intro line ABOVE H1 (as requested) */}
-            <p
-              className="
-  text-2xl
-  sm:text-3xl
-  md:text-3xl
-  xl:text-4xl
-  2xl:text-5xl
-  font-bold
-  leading-tight
-  mb-2
-"
-            >
+            <p className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="
-  text-4xl
-  sm:text-5xl
-  md:text-5xl
-  xl:text-6xl
-  2xl:text-7xl
-  font-bold
-  leading-tight
-  mb-4
-  text-yellow-400
-"
+              className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-yellow-400 break-words"
             >
               Hardware and Networking Course in Chennai
             </h1>
 
-            <ul
-              className="
-  mt-8
-  space-y-4
-  text-base
-  sm:text-lg
-  xl:text-xl
-  leading-8
-"
-            >
+            <ul className="mt-6 space-y-3 text-base md:text-lg leading-7 md:leading-8">
               <li>
                 ✅ Enroll in the{" "}
                 <strong>Top Hardware &amp; Networking Institute</strong> to
@@ -374,7 +342,7 @@ export default function JavaCoursePage() {
             <button
               type="button"
               onClick={scrollToForm}
-              className="group relative bg-neutral-800 h-auto min-h-[64px] w-full sm:w-96 xl:w-[420px] border border-white text-left p-4 text-gray-50 text-base font-bold rounded-lg overflow-hidden
+              className="group relative bg-neutral-800 h-auto min-h-[64px] w-full sm:w-80 md:w-80 lg:w-96 border border-white text-left p-4 text-gray-50 text-base font-bold rounded-lg overflow-hidden
                 mt-8
                 before:absolute before:w-12 before:h-12 before:content-[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg
                 after:absolute after:z-10 after:w-20 after:h-20 after:content-[''] after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg
@@ -397,21 +365,7 @@ export default function JavaCoursePage() {
 
           {/* RIGHT: Call to Action */}
           <aside
-            className="
-  w-full
-  sm:max-w-lg
-  xl:max-w-none
-  xl:w-[36%]
-  2xl:w-[34%]
-  bg-white
-  text-black
-  p-6
-  lg:p-8
-  rounded-xl
-  shadow-xl
-  mx-auto
-  xl:mx-0
-"
+            className="w-full md:w-[38%] lg:w-[36%] md:max-w-md bg-white text-black p-5 lg:p-6 rounded-xl shadow-xl md:ml-auto self-start"
             aria-labelledby="cta-heading"
           >
             <h2 id="cta-heading" className="text-2xl font-bold mb-4">
@@ -424,13 +378,7 @@ export default function JavaCoursePage() {
             <button
               type="button"
               onClick={scrollToForm}
-              className="
-relative
-mt-8
-w-full
-sm:w-auto
-px-8
-py-4 overflow-hidden rounded-full border-2 border-black bg-black text-white font-semibold text-base shadow-xl flex items-center justify-center gap-2 group transition-all duration-300 w-fit"
+              className=" relative mt-8 w-full sm:w-auto px-8 py-4 overflow-hidden rounded-full border-2 border-black bg-black text-white font-semibold text-base shadow-xl flex items-center justify-center gap-2 group transition-all duration-300 w-fit"
             >
               <span className="absolute inset-0 z-0 before:absolute before:w-full before:aspect-square before:-left-full before:-top-1/2 before:bg-emerald-500 before:rounded-full before:transition-all before:duration-700 before:ease-in-out group-hover:before:left-0 group-hover:before:scale-150 before:-z-10"></span>
               <span className="relative z-10 group-hover:text-black transition-colors duration-300">

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
@@ -269,18 +269,33 @@ const PlacedStudents = () => {
   const [sort, setSort] = useState("recent");
   const dispatch = useDispatch();
   const [quoteForm, setQuoteForm] = useState({
-    name: "", email: "", phone: "", batch: "", course: "", message: "",
+    name: "",
+    email: "",
+    phone: "",
+    batch: "",
+    course: "",
+    message: "",
   });
   const [quoteSubmitting, setQuoteSubmitting] = useState(false);
 
   const handleQuoteSubmit = async (e) => {
     e.preventDefault();
-    if (!quoteForm.name.trim() || !quoteForm.email.trim() || !quoteForm.phone.trim()) {
-      toast.error("Name, email and mobile are required.", { position: "top-center", theme: "colored" });
+    if (
+      !quoteForm.name.trim() ||
+      !quoteForm.email.trim() ||
+      !quoteForm.phone.trim()
+    ) {
+      toast.error("Name, email and mobile are required.", {
+        position: "top-center",
+        theme: "colored",
+      });
       return;
     }
     if (!/^[6-9]\d{9}$/.test(quoteForm.phone.trim())) {
-      toast.error("Enter a valid 10-digit mobile number starting with 6–9.", { position: "top-center", theme: "colored" });
+      toast.error("Enter a valid 10-digit mobile number starting with 6–9.", {
+        position: "top-center",
+        theme: "colored",
+      });
       return;
     }
     try {
@@ -293,12 +308,25 @@ const PlacedStudents = () => {
           mobile: quoteForm.phone,
           course: quoteForm.course,
           message: quoteForm.message,
-        })
+        }),
       ).unwrap();
-      toast.success("Thanks! We'll call you back soon.", { position: "top-center", theme: "colored" });
-      setQuoteForm({ name: "", email: "", phone: "", batch: "", course: "", message: "" });
+      toast.success("Thanks! We'll call you back soon.", {
+        position: "top-center",
+        theme: "colored",
+      });
+      setQuoteForm({
+        name: "",
+        email: "",
+        phone: "",
+        batch: "",
+        course: "",
+        message: "",
+      });
     } catch (err) {
-      toast.error(typeof err === "string" ? err : "Something went wrong.", { position: "top-center", theme: "colored" });
+      toast.error(typeof err === "string" ? err : "Something went wrong.", {
+        position: "top-center",
+        theme: "colored",
+      });
     } finally {
       setQuoteSubmitting(false);
     }
@@ -343,21 +371,39 @@ const PlacedStudents = () => {
       <ToastContainer />
       {/* HERO — Single page-level H1 */}
       <header
-        className="relative w-full mt-[54px] sm:mt-[100px] md:mt-[100px] h-[250px] sm:h-[320px] md:h-[390px] flex items-center justify-start px-3 sm:px-8 md:px-10"
+        className="relative w-full
+mt-[64px] sm:mt-[72px] md:mt-[134px] lg:mt-[150px]
+min-h-[520px] sm:min-h-[480px] md:min-h-[390px] lg:min-h-[440px]
+flex items-start md:items-center justify-start
+py-8 sm:py-10 md:py-0
+px-5 sm:px-8 md:px-10 lg:px-14"
         style={{
           backgroundImage: `url(/images/bgplacement.jpg)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
         }}
         aria-labelledby="page-title"
       >
-        <h1
-          id="page-title"
-          className="relative z-10 text-3xl md:text-4xl text-white font-bold leading-snug"
-        >
-          Placed Students List
-        </h1>
+        <div className="relative z-10 max-w-xl">
+          <h1
+            id="page-title"
+            className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold leading-tight"
+          >
+            Placed Students List
+          </h1>
+
+          <p className="mt-5 text-base sm:text-lg lg:text-xl text-white leading-relaxed max-w-lg">
+            Build your career with industry-focused training and dedicated
+            placement support at Vell InfoTech.
+          </p>
+
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-lg">
+            Our students have successfully started their careers in leading IT
+            companies across Software Development, Testing, Cloud, Data Science,
+            Networking, and other technologies.
+          </p>
+        </div>
       </header>
 
       {/* INTRO */}
@@ -664,27 +710,37 @@ const PlacedStudents = () => {
             aria-label="Training quote form"
             onSubmit={handleQuoteSubmit}
           >
-            <label className="sr-only" htmlFor="q-name">Your name</label>
+            <label className="sr-only" htmlFor="q-name">
+              Your name
+            </label>
             <input
               id="q-name"
               type="text"
               placeholder="Your Name"
               value={quoteForm.name}
-              onChange={(e) => setQuoteForm((f) => ({ ...f, name: e.target.value }))}
+              onChange={(e) =>
+                setQuoteForm((f) => ({ ...f, name: e.target.value }))
+              }
               className="rounded-xl bg-background px-3 py-2 border focus:ring-2 focus:ring-[#003c6a]"
             />
-            <label className="sr-only" htmlFor="q-email">Your email</label>
+            <label className="sr-only" htmlFor="q-email">
+              Your email
+            </label>
             <input
               id="q-email"
               type="email"
               placeholder="Your Email"
               value={quoteForm.email}
-              onChange={(e) => setQuoteForm((f) => ({ ...f, email: e.target.value }))}
+              onChange={(e) =>
+                setQuoteForm((f) => ({ ...f, email: e.target.value }))
+              }
               className="rounded-xl bg-background px-3 py-2 border focus:ring-2 focus:ring-[#003c6a]"
             />
             <div className="flex gap-3">
               <div className="flex-1">
-                <label className="sr-only" htmlFor="q-phone">Mobile number</label>
+                <label className="sr-only" htmlFor="q-phone">
+                  Mobile number
+                </label>
                 <input
                   id="q-phone"
                   type="tel"
@@ -702,36 +758,50 @@ const PlacedStudents = () => {
                 />
               </div>
               <div className="flex-1">
-                <label className="sr-only" htmlFor="q-batch">Batch preference</label>
+                <label className="sr-only" htmlFor="q-batch">
+                  Batch preference
+                </label>
                 <select
                   id="q-batch"
                   value={quoteForm.batch}
-                  onChange={(e) => setQuoteForm((f) => ({ ...f, batch: e.target.value }))}
+                  onChange={(e) =>
+                    setQuoteForm((f) => ({ ...f, batch: e.target.value }))
+                  }
                   className="rounded-xl bg-background px-3 py-2 border w-full focus:ring-2 focus:ring-[#003c6a]"
                 >
-                  <option value="" disabled>How &amp; Where</option>
+                  <option value="" disabled>
+                    How &amp; Where
+                  </option>
                   <option>Morning Batch</option>
                   <option>Evening Batch</option>
                   <option>Weekend</option>
                 </select>
               </div>
             </div>
-            <label className="sr-only" htmlFor="q-course">Course</label>
+            <label className="sr-only" htmlFor="q-course">
+              Course
+            </label>
             <input
               id="q-course"
               type="text"
               placeholder="Type Course"
               value={quoteForm.course}
-              onChange={(e) => setQuoteForm((f) => ({ ...f, course: e.target.value }))}
+              onChange={(e) =>
+                setQuoteForm((f) => ({ ...f, course: e.target.value }))
+              }
               className="rounded-xl bg-background px-3 py-2 border focus:ring-2 focus:ring-[#003c6a]"
             />
-            <label className="sr-only" htmlFor="q-message">Your message</label>
+            <label className="sr-only" htmlFor="q-message">
+              Your message
+            </label>
             <textarea
               id="q-message"
               placeholder="Your Message"
               rows={1}
               value={quoteForm.message}
-              onChange={(e) => setQuoteForm((f) => ({ ...f, message: e.target.value }))}
+              onChange={(e) =>
+                setQuoteForm((f) => ({ ...f, message: e.target.value }))
+              }
               className="rounded-xl bg-background px-3 py-2 border focus:ring-2 focus:ring-[#003c6a]"
             />
             <button

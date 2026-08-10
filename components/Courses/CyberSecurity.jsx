@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast, Slide } from "react-toastify";
@@ -274,8 +274,7 @@ export default function JavaCoursePage() {
 
   return (
     <>
-
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 pb-16 lg:pb-20 pt-[100px] md:pt-[190px]">
         {/* Toasts */}
         <ToastContainer
           newestOnTop
@@ -286,23 +285,23 @@ export default function JavaCoursePage() {
           theme="colored"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-start gap-8 md:gap-10 lg:gap-12">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full min-w-0">
             {/* Intro line ABOVE H1 (as requested) */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-2 break-words">
               Join Our 100% Job Guaranteed
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-yellow-400 break-words"
             >
               Cyber Security Program
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="space-y-3 mt-6 text-base sm:text-lg leading-7 sm:leading-8">
               <li>
                 ✅ Enroll in the <strong>Top Cyber Security Institute</strong>{" "}
                 to launch your career in ethical hacking and information
@@ -369,7 +368,7 @@ export default function JavaCoursePage() {
 
           {/* RIGHT: Call to Action */}
           <aside
-            className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md"
+            className="w-full md:max-w-md md:justify-self-end self-start bg-white text-black p-5 sm:p-6 rounded-xl shadow-lg"
             aria-labelledby="cta-heading"
           >
             <h2 id="cta-heading" className="text-2xl font-bold mb-4">
@@ -406,7 +405,7 @@ export default function JavaCoursePage() {
 
         {/* Info Bar */}
         <div
-          className="w-full mt-12 bg-[#1e88e5] py-5 rounded-md shadow-md"
+          className="w-full max-w-7xl mx-auto mt-10 md:mt-12 bg-[#1e88e5] px-4 py-5 rounded-md shadow-md"
           aria-label="Training Locations"
         >
           <p className="text-center text-white font-bold text-xl md:text-2xl">

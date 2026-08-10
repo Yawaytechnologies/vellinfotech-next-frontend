@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -68,7 +68,8 @@ const Internship = () => {
         return null;
       case "phone":
         if (!v) return "Phone number is required.";
-        if (!/^[6-9]\d{9}$/.test(v)) return "Enter a valid 10-digit mobile number starting with 6–9.";
+        if (!/^[6-9]\d{9}$/.test(v))
+          return "Enter a valid 10-digit mobile number starting with 6–9.";
 
         return null;
       case "course": {
@@ -180,7 +181,7 @@ const Internship = () => {
           phoneNumber: form.phone,
           course: form.course,
           message: form.message,
-        })
+        }),
       ).unwrap();
       toastSuccess("Thanks! Your application has been submitted.");
       setForm({ fullName: "", email: "", phone: "", course: "", message: "" });
@@ -188,7 +189,9 @@ const Internship = () => {
       setTouched({});
     } catch (err) {
       toastError(
-        typeof err === "string" ? err : "Something went wrong. Please try again."
+        typeof err === "string"
+          ? err
+          : "Something went wrong. Please try again.",
       );
     }
   };
@@ -200,13 +203,13 @@ const Internship = () => {
   const help = "mt-1 text-[12px] text-red-600";
 
   return (
-    <div className="bg-background pb-10 pt-[0px] md:pt-[30px] overflow-x-hidden">
+    <div className="bg-background pb-10 pt-[64px] md:pt-[134px] lg:pt-[150px] overflow-x-hidden">
       <ToastContainer newestOnTop />
 
       {/* HERO — Banner like screenshot */}
       <section
-        className="relative w-full mt-10 overflow-hidden bg-no-repeat bg-cover bg-center md:bg-right lg:bg-right
-min-h-[240px] sm:min-h-[320px] md:min-h-[340px] lg:min-h-[440px] flex items-center"
+        className="relative w-full overflow-hidden bg-no-repeat bg-cover bg-center md:bg-right lg:bg-right
+min-h-[300px] sm:min-h-[320px] md:min-h-[340px] lg:min-h-[440px] flex items-center"
         style={{
           backgroundImage: `url(/images/background.jpg)`,
           backgroundRepeat: "no-repeat",
@@ -218,7 +221,7 @@ min-h-[240px] sm:min-h-[320px] md:min-h-[340px] lg:min-h-[440px] flex items-cent
         {/* dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-14 lg:px-16 py-10 md:py-12">
+        <div className="relative z-10 w-full max-w-[1800px] 2xl:max-w-[2200px] mx-auto px-4 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24 py-10 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-[3.55fr_3.95fr] lg:grid-cols-2 gap-10 items-center justify-items-center md:justify-items-start">
             {/* LEFT CONTENT */}
             <div

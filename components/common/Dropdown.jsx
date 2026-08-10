@@ -1,5 +1,5 @@
-'use client'
-import React, {useEffect, useRef, useState } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
@@ -8,17 +8,16 @@ import { FiChevronRight } from "react-icons/fi";
  * Keep in sync with CourseRouter.jsx ROUTES.
  */
 
-const ref = useRef(null);
+// const ref = useRef(null);
 
-useEffect(() => {
-  const handler = (e) => {
-    if (!ref.current) return;
-    if (!ref.current.contains(e.target)) setOpen(false);
-  };
-  document.addEventListener("mousedown", handler);
-  return () => document.removeEventListener("mousedown", handler);
-}, []);
-
+// useEffect(() => {
+//   const handler = (e) => {
+//     if (!ref.current) return;
+//     if (!ref.current.contains(e.target)) setOpen(false);
+//   };
+//   document.addEventListener("mousedown", handler);
+//   return () => document.removeEventListener("mousedown", handler);
+// }, []);
 
 const COURSE_GROUPS = [
   {
@@ -74,21 +73,38 @@ export default function AllCoursesDropdown() {
   const [hovered, setHovered] = useState(0); // index of hovered group
   const [open, setOpen] = useState(false); // ✅ controls dropdown
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (!ref.current) return;
+
+      if (!ref.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
+
   return (
-    <div ref={ref} className="relative"
+    <div
+      ref={ref}
+      className="relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
-  type="button"
-  onClick={() => setOpen((v) => !v)}
-  className="transition flex items-center gap-1 focus:outline-none"
->
-  All Courses <span className="text-xs">▾</span>
-</button>
-
-
-
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="transition flex items-center gap-1 focus:outline-none"
+      >
+        All Courses <span className="text-xs">▾</span>
+      </button>
 
       {/* Dropdown Panel */}
       {open && (

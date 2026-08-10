@@ -635,6 +635,37 @@ export default function ConsultingPage() {
           </div>
         </section>
 
+        {/* Careers */}
+        <section
+          id="careers"
+          className="bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
+                Careers
+              </p>
+
+              <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-950 sm:text-4xl lg:text-5xl">
+                Explore Career Opportunities at Vell InfoTech
+              </h2>
+
+              <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
+                View our latest job openings and apply for suitable
+                opportunities with Vell InfoTech.
+              </p>
+
+              <Link
+                href="/careers"
+                className="group mt-8 inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl bg-[#005BAC] px-7 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-700 sm:text-base"
+              >
+                View Job Openings
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section
           id="contact-cta"
@@ -658,7 +689,7 @@ export default function ConsultingPage() {
               </p>
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=vellinfotech10@gmail.com&su=Hiring%20Enquiry"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@vellinfotech.com&su=Hiring%20Enquiry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group mt-8 inline-flex min-h-[56px] items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-blue-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-50"

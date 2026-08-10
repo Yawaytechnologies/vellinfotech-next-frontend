@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast, Slide } from "react-toastify";
@@ -271,26 +271,25 @@ export default function ProductionSupportPage() {
 
   return (
     <>
-
       {/* ==================== HERO ==================== */}
-      <section className="w-full pt-32 bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <section className="w-full overflow-x-hidden bg-gradient-to-r from-[#005BAC] to-[#003c6a] text-white px-4 sm:px-6 lg:px-8 pt-32 md:pt-44 lg:pt-48 pb-12 md:pb-16 lg:pb-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8 md:gap-6 lg:gap-10">
           {/* LEFT: Content */}
-          <div className="flex-1">
+          <div className="w-full lg:w-[58%] lg:flex-none">
             {/* Lead line above H1 */}
-            <p className="text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-2">
               Join Our 100% Job-Oriented
             </p>
 
             {/* H1 — Primary keyword */}
             <h1
               id="course-title"
-              className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-yellow-400"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-yellow-400 break-words"
             >
               Production Support Program
             </h1>
 
-            <ul className="space-y-3 mt-6 text-lg">
+            <ul className="space-y-3 mt-5 text-base sm:text-lg leading-7">
               <li>
                 ✅ Learn ITIL-based <strong>Incident / Problem / Change</strong>{" "}
                 management.
@@ -342,7 +341,7 @@ export default function ProductionSupportPage() {
           </div>
 
           {/* RIGHT: Call to Action */}
-          <div className="flex-1 bg-white text-black p-6 rounded-xl shadow-lg max-w-md">
+          <div className="w-full lg:w-[38%] lg:flex-none bg-white text-black p-5 sm:p-6 rounded-xl shadow-lg lg:max-w-md lg:ml-auto">
             <h2 className="text-2xl font-bold mb-4">Want IT Job?</h2>
             <p className="mb-4 text-lg">
               Become a Production Support Engineer in 3 Months
