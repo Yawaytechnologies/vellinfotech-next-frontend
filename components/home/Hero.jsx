@@ -1,13 +1,41 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight, FiChevronDown } from "react-icons/fi";
 
 const slides = [
-  { image: "/images/Slider1.png", headline: "Industry-Ready Training", subtext: "Master In-Demand Skills with our expertly designed training programs in IT, Software development, Data analytics, Digital marketing, and more.", cta: "Explore Courses", link: "/all-courses" },
-  { image: "/images/Slider2.png", headline: "100% Placement Assistance", subtext: "Our dedicated placement team partners with top companies to ensure you land the right job. Resume building, mock interviews, and career guidance included.", cta: "Start Your Career Journey", link: "/all-courses" },
-  { image: "/images/Slider3.png", headline: "Real-Time Projects", subtext: "Gain hands-on experience by working on real-time industry projects that boost your confidence and portfolio. Learn by doing, not just watching.", cta: "See Placements", link: "/placed-students" },
-  { image: "/images/Vell.png", headline: "Join Our Talent Network", subtext: "Become part of a growing network of skilled professionals and recruiters. Get noticed by top employers and stay updated with the latest job openings.", cta: "Enquire now", link: "/about" },
+  {
+    image: "/images/Slider1.webp",
+    headline: "Industry-Ready Training",
+    subtext:
+      "Master In-Demand Skills with our expertly designed training programs in IT, Software development, Data analytics, Digital marketing, and more.",
+    cta: "Explore Courses",
+    link: "/all-courses",
+  },
+  {
+    image: "/images/Slider2.webp",
+    headline: "100% Placement Assistance",
+    subtext:
+      "Our dedicated placement team partners with top companies to ensure you land the right job. Resume building, mock interviews, and career guidance included.",
+    cta: "Start Your Career Journey",
+    link: "/all-courses",
+  },
+  {
+    image: "/images/Slider3.webp",
+    headline: "Real-Time Projects",
+    subtext:
+      "Gain hands-on experience by working on real-time industry projects that boost your confidence and portfolio. Learn by doing, not just watching.",
+    cta: "See Placements",
+    link: "/placed-students",
+  },
+  {
+    image: "/images/Vell.webp",
+    headline: "Join Our Talent Network",
+    subtext:
+      "Become part of a growing network of skilled professionals and recruiters. Get noticed by top employers and stay updated with the latest job openings.",
+    cta: "Enquire now",
+    link: "/about",
+  },
 ];
 
 export default function HeroSlider() {
@@ -16,7 +44,10 @@ export default function HeroSlider() {
 
   useEffect(() => {
     if (paused) return;
-    const timer = setTimeout(() => setIndex((prev) => (prev + 1) % slides.length), 5000);
+    const timer = setTimeout(
+      () => setIndex((prev) => (prev + 1) % slides.length),
+      5000,
+    );
     return () => clearTimeout(timer);
   }, [index, paused]);
 
@@ -33,9 +64,11 @@ export default function HeroSlider() {
       style={{ maxWidth: "1875px", margin: "0 auto" }}
     >
       {/* Visually hidden section title (keeps hierarchy clean) */}
-      <h2 id="hero__heading" className="sr-only">Featured Highlights</h2>
+      <h2 id="hero__heading" className="sr-only">
+        Featured Highlights
+      </h2>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.img
           key={slides[index].image + index}
           src={slides[index].image}
@@ -55,7 +88,9 @@ export default function HeroSlider() {
       <button
         type="button"
         className="hidden md:flex absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 items-center justify-center bg-transparent"
-        onClick={() => setIndex((prev) => (prev - 1 + slides.length) % slides.length)}
+        onClick={() =>
+          setIndex((prev) => (prev - 1 + slides.length) % slides.length)
+        }
         aria-label="Previous Slide"
       >
         <FiChevronLeft size={58} className="text-text-primary" />
@@ -70,7 +105,7 @@ export default function HeroSlider() {
       </button>
 
       {/* Overlay content */}
-      <div className="relative z-20 w-full h-full flex items-center justify-center md:justify-start px-3 sm:px-4 md:px-8 lg:px-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-14 lg:px-16 py-10 md:py-12">
         <div
           className="
             w-full max-w-[95vw] xs:max-w-[22rem] sm:max-w-md md:max-w-xl
@@ -119,7 +154,9 @@ export default function HeroSlider() {
             <button
               type="button"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 shadow border border-[#005BAC]/10"
-              onClick={() => setIndex((prev) => (prev - 1 + slides.length) % slides.length)}
+              onClick={() =>
+                setIndex((prev) => (prev - 1 + slides.length) % slides.length)
+              }
               aria-label="Previous Slide"
             >
               <FiChevronLeft size={32} className="text-[#005BAC]" />

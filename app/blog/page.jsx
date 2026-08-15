@@ -91,7 +91,7 @@ export default async function BlogPage() {
               />
 
               <img
-                src="/images/career.jpg"
+                src="/images/career.webp"
                 alt="People reading tech blog articles online"
                 className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[440px] xl:max-w-[500px] 2xl:max-w-[560px] h-auto mx-auto md:mx-0 drop-shadow-2xl rounded-3xl"
                 loading="eager"

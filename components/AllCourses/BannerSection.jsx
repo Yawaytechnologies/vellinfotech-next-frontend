@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -59,9 +59,9 @@ export default function BannerSection() {
       <div className="w-full md:w-1/2 mt-6 md:mt-0 flex flex-col items-center md:items-end justify-center relative animate-float">
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-center lg:justify-end lg:gap-8">
           <img
-            src="/images/education1.png"
+            src="/images/education1.webp"
             alt="Student learning and coaching illustration"
-           className="h-[180px] sm:h-[220px] md:h-[240px] lg:h-[420px] max-w-full object-contain"
+            className="h-[180px] sm:h-[220px] md:h-[240px] lg:h-[420px] max-w-full object-contain"
           />
 
           <div className="bg-white shadow-md rounded-lg px-5 py-4 max-w-[280px] sm:max-w-xs border-l-4 border-[#00b4d8] text-left">

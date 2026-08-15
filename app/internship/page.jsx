@@ -211,7 +211,7 @@ const Internship = () => {
         className="relative w-full overflow-hidden bg-no-repeat bg-cover bg-center md:bg-right lg:bg-right
 min-h-[300px] sm:min-h-[320px] md:min-h-[340px] lg:min-h-[440px] flex items-center"
         style={{
-          backgroundImage: `url(/images/background.jpg)`,
+          backgroundImage: `url(/images/background.webp)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -300,7 +300,7 @@ hover:bg-white/15 hover:border-white/40 transition"
 
         <div className="flex justify-center items-stretch md:order-2 h-full">
           <img
-            src="/images/internship.jpg"
+            src="/images/internship.webp"
             alt="Students collaborating during internship"
             className="w-full max-w-[720px] lg:max-w-none h-[200px] sm:h-[260px] lg:h-[340px] object-cover rounded-lg shadow"
           />
@@ -360,7 +360,7 @@ hover:bg-white/15 hover:border-white/40 transition"
       >
         <div className="flex justify-center items-center">
           <img
-            src="/images/internship.jpg"
+            src="/images/internship.webp"
             alt="Benefits of internships"
             className="w-full max-w-[720px] lg:max-w-none h-[200px] sm:h-[260px] lg:h-[340px] object-cover rounded-lg shadow"
           />

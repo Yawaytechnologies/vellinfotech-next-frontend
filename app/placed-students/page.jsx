@@ -378,7 +378,7 @@ flex items-start md:items-center justify-start
 py-8 sm:py-10 md:py-0
 px-5 sm:px-8 md:px-10 lg:px-14"
         style={{
-          backgroundImage: `url(/images/bgplacement.jpg)`,
+          backgroundImage: `url(/images/bgplacement.webp)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX, FiChevronDown, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /* ✅ Updated groupedCourses: proper /all-courses/:slug slugs */
 const groupedCourses = [
@@ -164,7 +165,9 @@ const consultingMenus = [
 ];
 
 export default function Header() {
-  const [current, setCurrent] = useState("Home");
+  const pathname = usePathname();
+  const [currentHash, setCurrentHash] = useState("");
+  // const [current, setCurrent] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarMenus, setSidebarMenus] = useState({});
   const [activeCategory, setActiveCategory] = useState(null);
@@ -190,6 +193,28 @@ export default function Header() {
   useEffect(() => {
     if (!menuOpen) setSidebarMenus({});
   }, [menuOpen]);
+
+  useEffect(() => {
+    const updateHash = () => {
+      setCurrentHash(window.location.hash);
+    };
+
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, [pathname]);
+
+  const isCareersActive = pathname === "/careers";
+
+  const isConsultingOverviewActive = pathname === "/consulting" && !currentHash;
+  const isNavActive = (link) => {
+    if (link.href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === link.href || pathname.startsWith(`${link.href}/`);
+  };
 
   const toggleSidebarMenu = (label) =>
     setSidebarMenus((prev) => ({ ...prev, [label]: !prev[label] }));
@@ -220,17 +245,19 @@ export default function Header() {
                   className="relative flex h-full items-center"
                   onMouseEnter={() => {
                     setConsultingOpen(true);
-                    setCurrent("Consulting");
+
+                    if (pathname === "/careers" || isConsultingOverviewActive) {
+                      setActiveConsultingMenu(null);
+                    }
                   }}
                   onMouseLeave={() => {
                     setConsultingOpen(false);
-                    setActiveConsultingMenu(0);
                   }}
                 >
                   <Link
                     href="/consulting"
                     className={`flex items-center gap-1 font-semibold text-[13px] transition-all duration-200 lg:text-[15px] xl:text-lg ${
-                      current === "Consulting"
+                      pathname === "/consulting"
                         ? "text-[#005BAC]"
                         : "text-gray-800/90 hover:text-[#005BAC]"
                     }`}
@@ -307,17 +334,28 @@ export default function Header() {
 
                           <Link
                             href="/careers"
+                            onMouseEnter={() => setActiveConsultingMenu(null)}
                             onClick={() => {
                               setConsultingOpen(false);
                               setActiveConsultingMenu(null);
                             }}
-                            className="mb-2 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10 hover:text-white"
+                            className={`group mb-2 flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+                              isCareersActive
+                                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg"
+                                : "text-slate-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-white hover:shadow-lg"
+                            }`}
                           >
                             <div>
                               <span className="block text-sm font-semibold">
                                 Careers
                               </span>
-                              <span className="mt-0.5 block text-[11px] text-slate-400">
+                              <span
+                                className={`mt-0.5 block text-[11px] ${
+                                  isCareersActive
+                                    ? "text-cyan-50"
+                                    : "text-slate-400 group-hover:text-cyan-50"
+                                }`}
+                              >
                                 Explore career opportunities
                               </span>
                             </div>
@@ -327,11 +365,16 @@ export default function Header() {
 
                           <Link
                             href="/consulting"
+                            onMouseEnter={() => setActiveConsultingMenu(null)}
                             onClick={() => {
                               setConsultingOpen(false);
                               setActiveConsultingMenu(null);
                             }}
-                            className="mt-3 flex items-center justify-between rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10 hover:text-white"
+                            className={`mt-3 flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+                              isConsultingOverviewActive
+                                ? "border-transparent bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg"
+                                : "border-white/10 text-slate-200 hover:border-transparent hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:text-white hover:shadow-lg"
+                            }`}
                           >
                             Consulting Overview
                             <FiChevronRight />
@@ -409,10 +452,8 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setCurrent(link.name)}
-                  onMouseEnter={() => setCurrent(link.name)}
                   className={`relative font-semibold text-[13px] transition-all duration-200 lg:text-[15px] xl:text-lg ${
-                    current === link.name
+                    isNavActive(link)
                       ? "text-[#005BAC]"
                       : "text-gray-800/90 hover:text-[#005BAC]"
                   }`}

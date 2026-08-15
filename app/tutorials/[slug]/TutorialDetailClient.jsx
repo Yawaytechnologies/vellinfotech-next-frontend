@@ -17,7 +17,7 @@ const CONTENT = {
       author: "Global 04",
       date: "2024-10-11",
       categories: ["Blog", "Software Engineering", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "Introduction to Django, environment setup, project structure, models and views, templates, and deployment basics. Django's high-level Python web framework promotes quick development through simple, pragmatic design.",
     },
@@ -142,7 +142,7 @@ urlpatterns = [
       author: "Global 04",
       date: "2024-10-10",
       categories: ["Blog", "Datawarehouse", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "What a data warehouse is, the reference architecture, how to stand one up (Snowflake/BigQuery/Redshift), build a first ETL/ELT pipeline, and validate performance and costs.",
     },
@@ -253,7 +253,7 @@ FROM analytics.staging.orders_raw;`}</pre>
       author: "Team",
       date: "2024-10-08",
       categories: ["Blog", "DevTools", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "Install Git, make your first repo, understand commits and branching, work with remotes, and open a clean pull request.",
     },
@@ -326,7 +326,7 @@ git push -u origin main
       author: "Team",
       date: "2024-10-05",
       categories: ["Blog", "Backend", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "Create a production-ready REST API with layered architecture, DTOs, Bean Validation, exception handling, and OpenAPI.",
     },
@@ -396,7 +396,7 @@ class GlobalErrors {
       author: "Team",
       date: "2024-10-02",
       categories: ["Blog", "Frontend", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "Understand how hooks compose logic, avoid infinite renders, and structure effects and custom hooks for maintainable React apps.",
     },
@@ -466,7 +466,7 @@ const inc = () => setCount(c => c + 1);`}</pre>
       author: "Team",
       date: "2024-09-24",
       categories: ["Blog", "Databases", "Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt:
         "INNER, LEFT, RIGHT, FULL, and CROSS joins — where each is useful, example queries, and performance notes with indexes.",
     },
@@ -544,7 +544,7 @@ function fallbackFor(slug) {
       author: "Team",
       date: new Date().toISOString().slice(0, 10),
       categories: ["Tutorials"],
-      image: "/images/tutorials.jpg",
+      image: "/images/tutorials.webp",
       excerpt: "Full content coming soon…",
     },
     sections: [
@@ -567,16 +567,16 @@ export default function TutorialDetailClient({ slug }) {
   const { meta, sections } = page;
 
   return (
-    <article className="bg-slate-50 pb-20 pt-16 md:pt-24 lg:pt-28">
+    <article className="bg-slate-50 pb-20 pt-16 md:pt-[134px] lg:pt-[145px] xl:pt-[145px]">
       {/* Hero / banner */}
       <div className="relative">
         <img
           src={meta.image}
           alt={meta.title}
-          className="w-full h-44 sm:h-56 md:h-[280px] lg:h-[320px] xl:h-[360px] object-cover"
+          className="w-full h-44 sm:h-56 md:h-[300px] lg:h-[340px] xl:h-[380px] 2xl:h-[420px] object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
-        <div className="absolute inset-x-0 bottom-6 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="absolute inset-x-0 bottom-6 w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-extrabold text-white leading-snug">
             {meta.title}
           </h1>
@@ -600,7 +600,7 @@ export default function TutorialDetailClient({ slug }) {
       </div>
 
       {/* Body + Sidebar */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px] gap-6 lg:gap-8">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] xl:grid-cols-[minmax(0,1fr)_320px] gap-6 lg:gap-8 xl:gap-10">
         <div>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             {meta.excerpt}
@@ -625,7 +625,7 @@ export default function TutorialDetailClient({ slug }) {
           </div>
         </div>
 
-        <aside className="hidden lg:block lg:sticky lg:top-24 self-start">
+        <aside className="hidden lg:block lg:sticky lg:top-[160px] self-start">
           <div className="bg-white rounded-xl border border-slate-200 p-4">
             <h3 className="text-base font-semibold">On this page</h3>
             <ul className="mt-3 space-y-2 text-[#005BAC] text-sm">

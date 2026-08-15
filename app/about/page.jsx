@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 
@@ -51,15 +51,15 @@ const About = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen mt-15 md:mt-24 lg:mt-32">
       {/* HERO */}
       <header
         id="about-hero"
         aria-labelledby="about-hero__heading"
-        className="relative w-full mt-10 md:mt-24
+        className="relative w-full mt-0 md:mt-24
          min-h-[240px] sm:min-h-[320px] md:min-h-[340px] lg:min-h-[440px]
          overflow-hidden bg-no-repeat bg-cover bg-center md:bg-right lg:bg-right"
-        style={{ backgroundImage: `url(/images/Background1.png)` }}
+        style={{ backgroundImage: `url(/images/Background1.webp)` }}
       >
         {/* overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
@@ -374,7 +374,7 @@ const About = () => {
               </p>
               <div className="mt-6 flex items-center">
                 <img
-                  src="/images/Thennarasu S.png"
+                  src="/images/Thennarasu S.webp"
                   alt="Thennarasu S"
                   className="h-12 w-12 rounded-full object-cover"
                 />
@@ -392,7 +392,7 @@ const About = () => {
               </p>
               <div className="mt-6 flex items-center">
                 <img
-                  src="/images/benjamin Andrew.png"
+                  src="/images/benjamin Andrew.webp"
                   alt="Benjamin Andrew"
                   className="h-12 w-12 rounded-full object-cover"
                 />
@@ -411,7 +411,7 @@ const About = () => {
               </p>
               <div className="mt-6 flex items-center">
                 <img
-                  src="/images/Sudha Selvarajan.png"
+                  src="/images/Sudha Selvarajan.webp"
                   alt="Sudha Selvarajan"
                   className="h-12 w-12 rounded-full object-cover"
                 />

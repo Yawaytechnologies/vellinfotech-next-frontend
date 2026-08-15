@@ -36,7 +36,7 @@ export default function Contact() {
     { label: "Email", href: "mailto:contact@velinfotech.com", icon: MailIcon },
     {
       label: "Directions",
-      href: "https://www.google.com/maps/place/Vell+InfoTech+Pvt.+Ltd/@13.0205,80.2097,17z",
+      href: "https://www.google.com/maps/search/?api=1&query=Vell%20InfoTech%20Pvt.Ltd&query_place_id=ChIJvdtfnyNnUjoRO_LTE0U-L4M",
       icon: PinIcon,
       target: "_blank",
     },
@@ -405,7 +405,7 @@ export default function Contact() {
                       icon={PinIcon}
                       label="Location"
                       value="Open in Google Maps"
-                      href="https://maps.google.com/?cid=YOUR_GOOGLE_BUSINESS_CID"
+                      href="https://www.google.com/maps/search/?api=1&query=Vell%20InfoTech%20Pvt.Ltd&query_place_id=ChIJvdtfnyNnUjoRO_LTE0U-L4M"
                       external
                     />
                   </div>
@@ -758,22 +758,35 @@ export default function Contact() {
           <div className="mt-12 group relative rounded-3xl overflow-hidden border border-slate-200/60 shadow-2xl hover:shadow-3xl transition-all duration-500">
             <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-slate-900/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-900/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg border border-slate-200">
-              <div className="flex items-center gap-2">
-                <PinIcon className="text-[#005BAC]" />
-                <span className="text-sm font-semibold text-slate-900">
-                  Vell Infotech, Chennai
-                </span>
-              </div>
-            </div>
+
             <div className="relative h-[320px] w-full sm:h-[380px] lg:h-[450px]">
+              {/* Google Map */}
               <iframe
                 title="Vell InfoTech, Ekkattuthangal, Chennai"
-                src="https://www.google.com/maps?q=Vell%20InfoTech%2C%20No.4%2F38%2C%202nd%20Main%20Road%2C%20Kalaimagal%20Nagar%2C%20Ekkattuthangal%2C%20Chennai%2C%20Tamil%20Nadu%20600032&output=embed"
-                className="absolute inset-0 h-full w-full border-0 grayscale-[0.15] transition-all duration-700 group-hover:grayscale-0"
+                src="https://www.google.com/maps?q=Vell%20InfoTech%2C%20No.4%2F38%2C%202nd%20Main%20Road%2C%20Kalaimagal%20Nagar%2C%20Ekkattuthangal%2C%20Chennai%2C%20Tamil%20Nadu%20600032&output=embed&iwloc=0"
+                className="absolute inset-0 z-0 h-full w-full border-0"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
+              />
+
+              {/* Override Google's top-left Directions button */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Vell%20InfoTech%20Pvt.Ltd&query_place_id=ChIJvdtfnyNnUjoRO_LTE0U-L4M"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Vell InfoTech location"
+                className="
+      hidden md:block
+      absolute
+      top-[18px]
+      left-[390px]
+      z-30
+      h-[58px]
+      w-[58px]
+      rounded-full
+      cursor-pointer
+    "
               />
             </div>
           </div>

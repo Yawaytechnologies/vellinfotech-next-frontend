@@ -11,7 +11,7 @@ const TUTORIALS = [
     author: "Global 04",
     date: "2024-10-11",
     categories: ["Blog", "Software Engineering", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/django-framework-from-scratch",
     excerpt:
       "Introduction to Django, environment setup, project structure, models and views, templates, and deployment basics. Django's high-level Python web framework promotes quick development through simple, pragmatic design…",
@@ -22,7 +22,7 @@ const TUTORIALS = [
     author: "Global 04",
     date: "2024-10-10",
     categories: ["Blog", "Datawarehouse", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/build-your-first-data-warehouse",
     excerpt:
       "What is a data warehouse, architecture, ETL process, best practices, and a step-by-step implementation guide with common pitfalls and validation strategies…",
@@ -33,7 +33,7 @@ const TUTORIALS = [
     author: "Team",
     date: "2024-10-08",
     categories: ["Blog", "DevTools", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/git-beginners",
     excerpt:
       "Install Git, init repository, branching, commits, rebase vs merge, remote workflows, and opening your first pull request the right way…",
@@ -44,7 +44,7 @@ const TUTORIALS = [
     author: "Team",
     date: "2024-10-05",
     categories: ["Blog", "Backend", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/spring-boot-rest",
     excerpt:
       "Build a REST API with layered architecture, DTOs, Bean Validation, global exception handling, and OpenAPI documentation…",
@@ -55,7 +55,7 @@ const TUTORIALS = [
     author: "Team",
     date: "2024-10-02",
     categories: ["Blog", "Frontend", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/react-hooks-deep-dive",
     excerpt:
       "Understand how hooks compose logic, avoid infinite renders, and structure effects and custom hooks for maintainable React apps…",
@@ -66,7 +66,7 @@ const TUTORIALS = [
     author: "Team",
     date: "2024-09-24",
     categories: ["Blog", "Databases", "Tutorials"],
-    image: "/images/tutorials.jpg",
+    image: "/images/tutorials.webp",
     slug: "/tutorials/sql-joins-explained",
     excerpt:
       "INNER, LEFT, RIGHT, FULL, CROSS joins — where each is useful, pitfalls to avoid, and performance notes with indexes…",
@@ -91,9 +91,9 @@ export default function TutorialsPage() {
     <section className="bg-background min-h-screen">
       {/* Hero */}
       <div
-        className="relative w-full mt-[60px] sm:mt-[100px] md:mt-[134px] lg:mt-[134px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px] flex items-center justify-start px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20"
+        className="relative w-full mt-[60px] sm:mt-[100px] md:mt-[134px] lg:mt-[150px] h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px] flex items-center justify-start px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20"
         style={{
-          backgroundImage: "url(/images/tutorials.jpg)",
+          backgroundImage: "url(/images/tutorials.webp)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

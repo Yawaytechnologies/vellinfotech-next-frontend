@@ -12,7 +12,7 @@ const interviews = [
     date: "August 1, 2025",
     description:
       "Get comfortable with AWS fundamentals, key services, and practical deployment questions that appear in top MNC interviews.",
-    image: "/images/interview2.png",
+    image: "/images/interview2.webp",
   },
   {
     id: "selenium",
@@ -20,7 +20,7 @@ const interviews = [
     date: "August 1, 2025",
     description:
       "Brush up on Selenium WebDriver, automation frameworks, and real-world QA testing scenarios used in enterprise projects.",
-    image: "/images/interview1.png",
+    image: "/images/interview1.webp",
   },
   {
     id: "python",
@@ -28,7 +28,7 @@ const interviews = [
     date: "August 1, 2025",
     description:
       "Review Python essentials, logical coding rounds, OOP fundamentals, and frequently asked real-time project questions.",
-    image: "/images/interview2.png",
+    image: "/images/interview2.webp",
   },
   {
     id: "java",
@@ -36,7 +36,7 @@ const interviews = [
     date: "August 1, 2025",
     description:
       "Understand Java collections, multithreading, memory management, and the key OOP concepts every developer must know.",
-    image: "/images/interview1.png",
+    image: "/images/interview1.webp",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function InterviewQuestionsPage() {
     overflow-hidden
   "
         style={{
-          backgroundImage: "url('/images/interview.png')",
+          backgroundImage: "url('/images/interview.webp')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

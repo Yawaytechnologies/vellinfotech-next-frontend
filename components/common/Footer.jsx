@@ -1,11 +1,6 @@
-'use client'
+"use client";
 import React from "react";
-import {
-  FaFacebook,
-  FaLinkedin,
-  FaYoutube,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -31,16 +26,36 @@ export default function Footer() {
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 mt-4">
-              <a href="https://www.facebook.com/profile.php?id=100092270702066" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a
+                href="https://www.facebook.com/profile.php?id=100092270702066"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400"
+              >
                 <FaFacebook size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/vell-infotech-software-training-and-placement-institute/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+              <a
+                href="https://www.linkedin.com/in/vell-infotech-software-training-and-placement-institute/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500"
+              >
                 <FaLinkedin size={22} />
               </a>
-              <a href="https://www.instagram.com/velinfo_tech?igsh=MW1uZWxyOHI0NTRqOA==" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
+              <a
+                href="https://www.instagram.com/velinfo_tech?igsh=MW1uZWxyOHI0NTRqOA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-400"
+              >
                 <FaInstagram size={22} />
               </a>
-              <a href="https://www.youtube.com/@vell_infotech" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+              <a
+                href="https://www.youtube.com/@vell_infotech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-red-500"
+              >
                 <FaYoutube size={22} />
               </a>
             </div>
@@ -299,7 +314,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-xs text-black-400">
           <span>
-            &copy; {new Date().getFullYear()} Vel Infotech. All rights reserved.
+            &copy; {new Date().getFullYear()} Vell Infotech. All rights
+            reserved.
           </span>
 
           {/* Added Privacy Policy here */}
