@@ -2,7 +2,6 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { motion as Motion } from "framer-motion";
 
@@ -36,13 +35,17 @@ function matchesSearch(post, term) {
   return haystack.includes(term);
 }
 
-export default function BlogListClient({ posts = [] }) {
-  // Seeded from the URL so the sidebar on an article page can hand off a query
-  // (/blog?q=... or /blog?category=...) to this page.
-  const searchParams = useSearchParams();
-
-  const [search, setSearch] = useState(() => searchParams.get("q") || "");
-  const [category, setCategory] = useState(() => searchParams.get("category") || null);
+export default function BlogListClient({
+  posts = [],
+  initialSearch = "",
+  initialCategory = null,
+}) {
+  // The query is read on the server and handed down, rather than pulled from
+  // useSearchParams() here. That hook would force this whole subtree to render on
+  // the client, leaving the served HTML with a loading placeholder and no links to
+  // any article — the listing page is how crawlers reach the posts.
+  const [search, setSearch] = useState(initialSearch);
+  const [category, setCategory] = useState(initialCategory);
 
   const filteredPosts = useMemo(() => {
     const term = search.trim().toLowerCase();

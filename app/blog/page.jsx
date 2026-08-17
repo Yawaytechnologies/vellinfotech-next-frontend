@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { fetchBlogPosts } from "../../lib/api";
 import BlogListClient from "../../components/BlogListClient";
 import { FiArrowRight } from "react-icons/fi";
@@ -21,8 +20,13 @@ export const metadata = {
   },
 };
 
-export default async function BlogPage() {
+export default async function BlogPage({ searchParams }) {
   const posts = await fetchBlogPosts();
+
+  // Read ?q= and ?category= here so the article grid and sidebar are part of the
+  // server-rendered HTML. Doing it in the client component instead cost the page
+  // every one of its outbound article links.
+  const params = await searchParams;
 
   return (
     <main className="bg-[#021733] min-h-screen">
@@ -122,11 +126,11 @@ export default async function BlogPage() {
             </p>
           </header>
 
-          {/* BlogListClient reads ?q= and ?category= via useSearchParams, which
-              needs a Suspense boundary for this page to stay prerendered. */}
-          <Suspense fallback={<div className="py-16 text-center text-sm text-slate-500">Loading articles...</div>}>
-            <BlogListClient posts={posts} />
-          </Suspense>
+          <BlogListClient
+            posts={posts}
+            initialSearch={params?.q || ""}
+            initialCategory={params?.category || null}
+          />
         </div>
       </section>
     </main>
