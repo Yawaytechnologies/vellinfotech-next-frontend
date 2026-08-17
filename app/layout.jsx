@@ -11,9 +11,12 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL("https://www.vellinfotech.com"),
+  // No `template` here on purpose. Every page already writes "| Vell InfoTech"
+  // into its own hand-tuned title, so a template appended a second copy —
+  // "About Us | Vell InfoTech — IT Training Institute Chennai | Vell InfoTech".
+  // Pages own their full title; this default covers the home page.
   title: {
     default: "Vell InfoTech | Best Software Training & Placement Chennai",
-    template: "%s | Vell InfoTech",
   },
   description:
     "Vell InfoTech Chennai offers best software training & IT courses with 100% placement support. Learn Java, Python, Full Stack, AI, Data Science & get high-paying IT jobs.",

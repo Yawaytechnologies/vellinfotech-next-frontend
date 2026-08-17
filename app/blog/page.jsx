@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { fetchBlogPosts } from "../../lib/api";
 import BlogListClient from "../../components/BlogListClient";
 import { FiArrowRight } from "react-icons/fi";
@@ -107,7 +108,7 @@ export default async function BlogPage() {
         className="w-full bg-[#E7EFF7]"
         aria-labelledby="latest-articles-heading"
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-6 py-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
           <header className="mb-5 text-center">
             <h2
               id="latest-articles-heading"
@@ -121,7 +122,11 @@ export default async function BlogPage() {
             </p>
           </header>
 
-          <BlogListClient posts={posts} />
+          {/* BlogListClient reads ?q= and ?category= via useSearchParams, which
+              needs a Suspense boundary for this page to stay prerendered. */}
+          <Suspense fallback={<div className="py-16 text-center text-sm text-slate-500">Loading articles...</div>}>
+            <BlogListClient posts={posts} />
+          </Suspense>
         </div>
       </section>
     </main>

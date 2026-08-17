@@ -88,12 +88,15 @@ export default async function sitemap() {
     priority: 0.8,
   }));
 
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${BASE}/blog/${post.id}`,
-    changeFrequency: "weekly",
-    priority: 0.8,
-    lastModified: post.updatedAt || post.createdAt || new Date().toISOString(),
-  }));
+  // Slug-based now; posts without one are skipped rather than emitting /blog/undefined.
+  const blogRoutes = blogPosts
+    .filter((post) => post.slug)
+    .map((post) => ({
+      url: `${BASE}/blog/${post.slug}`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      lastModified: post.updatedAt || post.createdAt || new Date().toISOString(),
+    }));
 
   const jobRoutes = jobs.map((job) => ({
     url: `${BASE}/careers/${job.id}`,

@@ -10,6 +10,8 @@ const API_BASE = (
 
 const EMPTY_FORM = {
   title: "",
+  category: "",
+  slug: "",
   excerpt: "",
   content: "",
   imageBase64: "",
@@ -226,6 +228,8 @@ export default function BlogPosts() {
     setEditingPost(post);
     setForm({
       title: post.title || "",
+      category: post.category || "",
+      slug: post.slug || "",
       excerpt: post.excerpt || "",
       content: post.content || "",
       imageBase64: post.imageBase64 || "",
@@ -488,6 +492,42 @@ export default function BlogPosts() {
               maxLength={255}
               placeholder="Blog post title"
             />
+          </Field>
+
+          <Field
+            label="Category"
+            hint="Groups the post in the blog sidebar. Defaults to Articles."
+          >
+            <input
+              className={inputCls}
+              value={form.category}
+              onChange={set("category")}
+              maxLength={60}
+              placeholder="Articles"
+            />
+          </Field>
+
+          <Field
+            label="URL slug"
+            hint={
+              editingPost
+                ? "Changing this changes the post's public URL and breaks existing links. Leave it alone unless you mean it."
+                : "Leave blank to generate one from the title."
+            }
+          >
+            <input
+              className={inputCls}
+              value={form.slug}
+              onChange={set("slug")}
+              maxLength={120}
+              placeholder="generated-from-the-title"
+            />
+
+            {form.slug && (
+              <p className="mt-1 break-all text-[11px] text-gray-500">
+                https://www.vellinfotech.com/blog/{form.slug}
+              </p>
+            )}
           </Field>
 
           <Field

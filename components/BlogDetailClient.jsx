@@ -4,21 +4,24 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
+import BlogSidebar from "./blog/BlogSidebar";
+import { cleanText } from "../lib/seo";
+
 function readTime(content) {
   if (!content) return 1;
   const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
 }
 
-export default function BlogDetailClient({ post }) {
-  const { title, content, excerpt, imageBase64 } = post;
+export default function BlogDetailClient({ post, allPosts = [] }) {
+  const { title, content, excerpt, imageBase64, category } = post;
   const imageSrc = imageBase64 || "/images/career.jpg";
   const mins = readTime(content);
   const isHtml = typeof content === "string" && /<[a-z][\s\S]*>/i.test(content);
 
   return (
     <main className="bg-[#021733] min-h-screen text-white pt-20 pb-24">
-      <div className="max-w-5xl mx-auto px-4 md:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Back link */}
         <div className="mb-6">
           <Link
@@ -32,6 +35,9 @@ export default function BlogDetailClient({ post }) {
           </Link>
         </div>
 
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10">
+        {/* LEFT — the article */}
+        <div className="min-w-0">
         {/* Article card */}
         <article className="bg-[#031735] rounded-3xl shadow-[0_18px_45px_rgba(0,0,0,0.55)] border border-slate-800 overflow-hidden">
           {/* Hero image */}
@@ -54,7 +60,7 @@ export default function BlogDetailClient({ post }) {
               {/* Meta row */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <span className="px-2.5 py-1 rounded-full bg-emerald-400/10 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
-                  Vel InfoTech · Blog
+                  {category || "Articles"}
                 </span>
                 <span className="text-[11px] text-slate-400">{mins} min read</span>
               </div>
@@ -65,9 +71,9 @@ export default function BlogDetailClient({ post }) {
               </h1>
 
               {/* Excerpt */}
-              {excerpt && (
+              {cleanText(excerpt) && (
                 <p className="text-sm md:text-[15px] text-slate-200/95 mb-5 md:mb-6 leading-relaxed border-l-2 border-emerald-400/40 pl-4 italic">
-                  {excerpt}
+                  {cleanText(excerpt)}
                 </p>
               )}
 
@@ -97,6 +103,15 @@ export default function BlogDetailClient({ post }) {
             <FiArrowLeft className="text-sm" />
             Back to all articles
           </Link>
+        </div>
+        </div>
+
+        {/* RIGHT — sidebar */}
+        <BlogSidebar
+          posts={allPosts}
+          currentPostId={post.id}
+          variant="dark"
+        />
         </div>
       </div>
     </main>
