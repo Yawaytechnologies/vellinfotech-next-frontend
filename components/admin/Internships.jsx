@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { FaTrash, FaSync } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
-import axios from "axios";
+import adminApi from "../../lib/adminHttp";
 
 const BASE = (process.env.NEXT_PUBLIC_API_BASE_URL || "").replace(/\/$/, "");
 
@@ -49,7 +49,7 @@ export default function Internships() {
     setStatus("loading");
     setErr(null);
     try {
-      const { data } = await axios.get(`${BASE}/api/internships`);
+      const { data } = await adminApi.get(`${BASE}/api/internships`);
       setRows(data);
       setStatus("success");
     } catch (e) {
@@ -73,7 +73,7 @@ export default function Internships() {
     if (!id || !window.confirm("Delete this internship application?")) return;
     setDeleting((d) => ({ ...d, [id]: true }));
     try {
-      await axios.delete(`${BASE}/api/internships/${id}`);
+      await adminApi.delete(`${BASE}/api/internships/${id}`);
       setRows((prev) => prev.filter((r) => r.id !== id));
     } catch (e) {
       alert(e?.response?.data?.message || "Delete failed");

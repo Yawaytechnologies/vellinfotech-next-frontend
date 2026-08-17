@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { FaTrash, FaSync } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
-import axios from "axios";
+import adminApi from "../../lib/adminHttp";
 
 const BASE = (process.env.NEXT_PUBLIC_API_BASE_URL || "").replace(/\/$/, "");
 
@@ -61,7 +61,7 @@ export default function JobApplications() {
     setStatus("loading");
     setErr(null);
     try {
-      const { data } = await axios.get(`${BASE}/api/jobs/applications`);
+      const { data } = await adminApi.get(`${BASE}/api/jobs/applications`);
       setRows(data);
       setStatus("success");
     } catch (e) {
@@ -85,7 +85,7 @@ export default function JobApplications() {
     if (!appId || !window.confirm("Delete this job application?")) return;
     setDeleting((d) => ({ ...d, [appId]: true }));
     try {
-      await axios.delete(`${BASE}/api/jobs/${jobId}/applications/${appId}`);
+      await adminApi.delete(`${BASE}/api/jobs/${jobId}/applications/${appId}`);
       setRows((prev) => prev.filter((r) => r.id !== appId));
     } catch (e) {
       alert(e?.response?.data?.message || "Delete failed");

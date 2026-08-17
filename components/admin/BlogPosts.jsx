@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import axios from "axios";
+import adminApi from "../../lib/adminHttp";
 import { FaTrash, FaSync, FaPlus, FaEdit, FaImage } from "react-icons/fa";
 import { FiX, FiUpload, FiLink } from "react-icons/fi";
 
@@ -195,7 +195,7 @@ export default function BlogPosts() {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axios.get(
+      const { data } = await adminApi.get(
         `${API_BASE}/api/blogposts?page=0&size=100&sortBy=id&direction=desc`
       );
       const items = Array.isArray(data)
@@ -247,13 +247,13 @@ export default function BlogPosts() {
     setFormError(null);
     try {
       if (editingPost) {
-        const { data } = await axios.put(
+        const { data } = await adminApi.put(
           `${API_BASE}/api/blogposts/${editingPost.id}`,
           form
         );
         setPosts((prev) => prev.map((p) => (p.id === data.id ? data : p)));
       } else {
-        const { data } = await axios.post(`${API_BASE}/api/blogposts`, form);
+        const { data } = await adminApi.post(`${API_BASE}/api/blogposts`, form);
         setPosts((prev) => [data, ...prev]);
       }
       setShowForm(false);
@@ -270,7 +270,7 @@ export default function BlogPosts() {
     if (!window.confirm("Delete this blog post? This cannot be undone.")) return;
     setDeletingId(id);
     try {
-      await axios.delete(`${API_BASE}/api/blogposts/${id}`);
+      await adminApi.delete(`${API_BASE}/api/blogposts/${id}`);
       setPosts((prev) => prev.filter((p) => p.id !== id));
     } catch (err) {
       alert(err.response?.data?.message || "Failed to delete blog post");

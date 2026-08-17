@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useCallback } from "react";
-import axios from "axios";
+import adminApi from "../../lib/adminHttp";
 import { FaTrash, FaSync, FaPlus, FaEdit } from "react-icons/fa";
 import { FiEye, FiX } from "react-icons/fi";
 
@@ -105,7 +105,7 @@ export default function JobPosts() {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axios.get(`${API_BASE}/api/job-posts`);
+      const { data } = await adminApi.get(`${API_BASE}/api/job-posts`);
       setJobs(Array.isArray(data) ? data : []);
     } catch (err) {
       setError(
@@ -154,13 +154,13 @@ export default function JobPosts() {
     setFormError(null);
     try {
       if (editingJob) {
-        const { data } = await axios.put(
+        const { data } = await adminApi.put(
           `${API_BASE}/api/job-posts/${editingJob.id}`,
           form
         );
         setJobs((prev) => prev.map((j) => (j.id === data.id ? data : j)));
       } else {
-        const { data } = await axios.post(`${API_BASE}/api/job-posts`, form);
+        const { data } = await adminApi.post(`${API_BASE}/api/job-posts`, form);
         setJobs((prev) => [data, ...prev]);
       }
       setShowForm(false);
@@ -177,7 +177,7 @@ export default function JobPosts() {
     if (!window.confirm("Delete this job post? This cannot be undone.")) return;
     setDeletingId(id);
     try {
-      await axios.delete(`${API_BASE}/api/job-posts/${id}`);
+      await adminApi.delete(`${API_BASE}/api/job-posts/${id}`);
       setJobs((prev) => prev.filter((j) => j.id !== id));
     } catch (err) {
       alert(err.response?.data?.message || "Failed to delete job post");
@@ -191,7 +191,7 @@ export default function JobPosts() {
     setApplications([]);
     setAppLoading(true);
     try {
-      const { data } = await axios.get(
+      const { data } = await adminApi.get(
         `${API_BASE}/api/jobs/${job.id}/applications`
       );
       setApplications(Array.isArray(data) ? data : []);

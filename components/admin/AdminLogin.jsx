@@ -1,38 +1,77 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { FiUser, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
-import { setAuth, getAuth } from "../../lib/AuthStore";
+import { setAuth, isLoggedIn } from "../../lib/AuthStore";
 import { useRouter } from "next/navigation";
+
+const API_BASE = (
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"
+).replace(/\/$/, "");
 
 export default function AdminLogin({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
-  // Auto-login if already stored
+  // Skip the form if there is still a valid, unexpired session.
   useEffect(() => {
-    const existing = getAuth();
-    if (existing?.username) {
-      onLogin?.(existing);
+    if (isLoggedIn()) {
       router.push("/admin/course-enquired");
     }
-  }, [router, onLogin]);
+  }, [router]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ Hardcoded check
-    if (username === "Admin" && password === "Velinfotech@123") {
-      setError("");
-      const user = { username, loggedAt: Date.now() };
+    setSubmitting(true);
+    setError("");
 
-      setAuth(user); // save in localStorage
-      onLogin?.(user);
+    try {
+      // The backend checks this against a bcrypt hash. It used to be compared here
+      // against a literal in this file, which shipped the admin password to every
+      // visitor inside the JavaScript bundle.
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!res.ok) {
+        let message =
+          res.status === 503
+            ? "Admin login is not configured on the server."
+            : "Invalid username or password";
+
+        try {
+          const payload = await res.json();
+          if (payload?.message) message = payload.message;
+        } catch {
+          // Keep the default message.
+        }
+
+        setError(message);
+        return;
+      }
+
+      const data = await res.json();
+
+      const session = {
+        username: data.username,
+        token: data.token,
+        expiresAt: Date.now() + (data.expiresInSeconds || 0) * 1000,
+        loggedAt: Date.now(),
+      };
+
+      setAuth(session);
+      onLogin?.(session);
       router.push("/admin/course-enquired");
-    } else {
-      setError("Invalid username or password");
+    } catch {
+      setError("Could not reach the server. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -97,9 +136,10 @@ export default function AdminLogin({ onLogin }) {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-[#005BAC] to-[#2196f3] hover:from-[#2196f3] hover:to-[#005BAC] text-white font-bold py-2.5 rounded-lg text-lg shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-[#005BAC]/40 mt-1"
+            disabled={submitting}
+            className="w-full bg-gradient-to-r from-[#005BAC] to-[#2196f3] hover:from-[#2196f3] hover:to-[#005BAC] text-white font-bold py-2.5 rounded-lg text-lg shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-[#005BAC]/40 mt-1 disabled:opacity-60"
           >
-            Sign In
+            {submitting ? "Signing in…" : "Sign In"}
           </button>
         </form>
 
