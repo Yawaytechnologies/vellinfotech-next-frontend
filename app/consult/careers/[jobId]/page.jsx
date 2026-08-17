@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import {
   ArrowLeft,
@@ -38,22 +39,9 @@ export default async function ConsultingJobDetailPage({ params }) {
 
   const job = await fetchConsultingJobPostById(jobId);
 
-  if (!job) {
-    return (
-      <section className="min-h-screen bg-slate-950 px-4 pb-16 pt-[170px] text-white">
-        <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-3xl font-semibold">Job Not Found</h1>
-
-          <Link
-            href="/consult/careers"
-            className="mt-6 inline-flex rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white"
-          >
-            Back to Careers
-          </Link>
-        </div>
-      </section>
-    );
-  }
+  // A real 404, not a 200 page that merely says "not found" — Google flags the
+  // latter as a soft 404 and it keeps closed roles in the index.
+  if (!job) notFound();
 
   const responsibilities = splitCommaList(job.responsibilities);
   const skills = splitCommaList(job.skills);
