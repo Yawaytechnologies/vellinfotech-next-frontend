@@ -4,83 +4,39 @@ import {
   ArrowLeft,
   Briefcase,
   Clock,
-  FileText,
   IndianRupee,
-  Mail,
   MapPin,
-  Phone,
 } from "lucide-react";
 
-const demoJobs = {
-  1: {
-    id: 1,
-    jobTitle: "HR Recruitment Consultant",
-    department: "Consulting",
-    location: "Chennai",
-    experience: "1-3 Years",
-    salaryRange: "3-5 LPA",
-    workMode: "On-site",
-    posted: "17/08/2026",
+import { fetchConsultingJobPostById } from "../../../../lib/api";
+import { formatPostedDate, splitCommaList } from "../../../../lib/consultingApi";
+import ConsultingApplyForm from "../../../../components/consulting/ConsultingApplyForm";
 
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }) {
+  const { jobId } = await params;
+  const job = await fetchConsultingJobPostById(jobId);
+
+  if (!job) {
+    return { title: "Job Not Found | Vell InfoTech" };
+  }
+
+  return {
+    title: `${job.jobTitle} | Consulting Careers at Vell InfoTech`,
     description:
-      "Join Vell Infotech's consulting team and work closely with clients, candidates and internal teams to deliver professional recruitment and staffing solutions.",
-
-    responsibilities: [
-      "Handle end-to-end recruitment activities",
-      "Understand client hiring requirements",
-      "Source and screen suitable candidates",
-      "Schedule and coordinate interviews",
-      "Maintain candidate communication",
-      "Coordinate with clients and internal teams",
-    ],
-
-    skills: [
-      "Recruitment",
-      "Communication",
-      "Candidate Screening",
-      "Client Coordination",
-      "Interview Coordination",
-      "MS Office",
-    ],
-  },
-
-  2: {
-    id: 2,
-    jobTitle: "Business Development Executive",
-    department: "Consulting",
-    location: "Chennai",
-    experience: "1-4 Years",
-    salaryRange: "3-6 LPA",
-    workMode: "Hybrid",
-    posted: "17/08/2026",
-
-    description:
-      "Work with Vell Infotech's consulting team to identify new business opportunities, understand client requirements and develop long-term professional relationships.",
-
-    responsibilities: [
-      "Identify new business opportunities",
-      "Connect with prospective clients",
-      "Understand customer requirements",
-      "Coordinate client meetings",
-      "Support proposals and presentations",
-      "Maintain long-term client relationships",
-    ],
-
-    skills: [
-      "Business Development",
-      "Communication",
-      "Client Handling",
-      "Sales",
-      "Negotiation",
-      "Presentation Skills",
-    ],
-  },
-};
+      job.jobDescription ||
+      `Apply for the ${job.jobTitle} consulting role at Vell InfoTech.`,
+    alternates: {
+      canonical: `https://www.vellinfotech.com/consult/careers/${job.id}`,
+    },
+  };
+}
 
 export default async function ConsultingJobDetailPage({ params }) {
   const { jobId } = await params;
 
-  const job = demoJobs[jobId];
+  const job = await fetchConsultingJobPostById(jobId);
 
   if (!job) {
     return (
@@ -98,6 +54,10 @@ export default async function ConsultingJobDetailPage({ params }) {
       </section>
     );
   }
+
+  const responsibilities = splitCommaList(job.responsibilities);
+  const skills = splitCommaList(job.skills);
+  const posted = formatPostedDate(job.createdAt);
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-950 px-4 pb-16 pt-[90px] text-slate-100 md:pt-[170px]">
@@ -124,7 +84,7 @@ export default async function ConsultingJobDetailPage({ params }) {
           </h1>
 
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
-            Join Vell Infotech's consulting team and build your professional
+            Join Vell Infotech&apos;s consulting team and build your professional
             career through client-focused consulting and business solutions.
           </p>
 
@@ -162,7 +122,7 @@ export default async function ConsultingJobDetailPage({ params }) {
                 </div>
 
                 <span className="w-fit rounded-full bg-emerald-500/15 px-3 py-1.5 text-[11px] font-medium text-emerald-200">
-                  Posted: {job.posted}
+                  Posted: {posted}
                 </span>
               </div>
 
@@ -229,206 +189,55 @@ export default async function ConsultingJobDetailPage({ params }) {
                   Role Overview
                 </h3>
 
-                <p className="mt-2 leading-6 text-slate-300">
-                  {job.description}
+                <p className="mt-2 whitespace-pre-wrap leading-6 text-slate-300">
+                  {job.jobDescription}
                 </p>
               </div>
 
-              <div className="mt-6">
-                <h3 className="font-semibold text-white">
-                  Key Responsibilities
-                </h3>
+              {responsibilities.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="font-semibold text-white">
+                    Key Responsibilities
+                  </h3>
 
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-[13px] leading-5 text-slate-300">
-                  {job.responsibilities.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-[13px] leading-5 text-slate-300">
+                    {responsibilities.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-              <div className="mt-6">
-                <h3 className="font-semibold text-white">
-                  Skills &amp; Requirements
-                </h3>
+              {skills.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="font-semibold text-white">
+                    Skills &amp; Requirements
+                  </h3>
 
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-[13px] leading-5 text-slate-300">
-                  {job.skills.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-[13px] leading-5 text-slate-300">
+                    {skills.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {job.qualification && (
+                <div className="mt-6">
+                  <h3 className="font-semibold text-white">
+                    Qualification
+                  </h3>
+
+                  <p className="mt-2 leading-6 text-slate-300">
+                    {job.qualification}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="h-fit rounded-2xl border border-slate-800 bg-slate-900/85 p-5 shadow-2xl shadow-slate-950/70 sm:p-6">
-            <div className="mb-5 flex items-start justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-500/20">
-                  <FileText className="h-4 w-4 text-indigo-300" />
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-white">
-                    Apply for this role
-                  </h3>
-
-                  <p className="mt-1 text-[10px] text-slate-400">
-                    Complete your profile below
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-right text-[10px] text-slate-400">
-                * Mandatory
-              </p>
-            </div>
-
-            {/* Design-only form */}
-            <div className="space-y-4">
-              {/* Candidate Type */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Candidate Type *
-                </label>
-
-                <div className="mt-2 flex gap-6 text-xs text-slate-200">
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="candidateType"
-                      defaultChecked
-                    />
-                    Fresher
-                  </label>
-
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="candidateType"
-                    />
-                    Experienced
-                  </label>
-                </div>
-              </div>
-
-              {/* Full Name */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Full Name *
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="Your full name"
-                  className="mt-1.5 h-10 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 text-sm text-white outline-none transition focus:border-indigo-400"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Email *
-                </label>
-
-                <div className="mt-1.5 flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-950 px-3 focus-within:border-indigo-400">
-                  <Mail className="h-4 w-4 text-slate-500" />
-
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    className="h-10 w-full bg-transparent text-sm text-white outline-none"
-                  />
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Phone *
-                </label>
-
-                <div className="mt-1.5 flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-950 px-3 focus-within:border-indigo-400">
-                  <Phone className="h-4 w-4 text-slate-500" />
-
-                  <input
-                    type="tel"
-                    placeholder="10 digit mobile number"
-                    className="h-10 w-full bg-transparent text-sm text-white outline-none"
-                  />
-                </div>
-              </div>
-
-              {/* Qualification */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Highest Qualification *
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="B.E CSE, B.Sc IT, MCA etc."
-                  className="mt-1.5 h-10 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 text-sm text-white outline-none focus:border-indigo-400"
-                />
-              </div>
-
-              {/* Year */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Passing Year *
-                </label>
-
-                <input
-                  type="number"
-                  placeholder="2026"
-                  className="mt-1.5 h-10 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 text-sm text-white outline-none focus:border-indigo-400"
-                />
-              </div>
-
-              {/* Skills */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Skills *
-                </label>
-
-                <textarea
-                  rows={3}
-                  placeholder="Recruitment, Communication, Client Handling etc."
-                  className="mt-1.5 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white outline-none focus:border-indigo-400"
-                />
-              </div>
-
-              {/* Summary */}
-              <div>
-                <label className="text-xs font-medium text-slate-200">
-                  Short Message / Profile Summary
-                </label>
-
-                <textarea
-                  rows={4}
-                  placeholder="Briefly describe your experience, skills and profile."
-                  className="mt-1.5 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white outline-none focus:border-indigo-400"
-                />
-              </div>
-
-              <div className="flex justify-end pt-1">
-                <button
-                  type="button"
-                  className="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-indigo-900/50 transition hover:bg-indigo-700"
-                >
-                  Submit Application
-                </button>
-              </div>
-            </div>
-
-            <p className="mt-5 border-t border-slate-800 pt-4 text-[11px] leading-5 text-slate-400">
-              You can also send your resume directly to{" "}
-              <span className="font-semibold text-indigo-200">
-                vellinfotech10@gmail.com
-              </span>{" "}
-              with the job title in the subject line.
-            </p>
-          </div>
+          <ConsultingApplyForm jobId={job.id} jobTitle={job.jobTitle} />
         </div>
       </div>
     </section>

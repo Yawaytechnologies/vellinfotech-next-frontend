@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Eye,
   RefreshCw,
@@ -8,85 +8,44 @@ import {
   X,
 } from "lucide-react";
 
-const INITIAL_APPLICATIONS = [
-  {
-    id: 1,
-
-    candidateType: "Fresher",
-
-    name: "Arun Kumar",
-
-    phone: "9876543210",
-
-    email: "arun@gmail.com",
-
-    applyingForPosition:
-      "HR Recruitment Consultant",
-
-    qualification: "BBA",
-
-    passingYear: "2026",
-
-    skills:
-      "Recruitment, Communication, MS Office",
-
-    totalExperience: "0",
-
-    relevantExperience: "0",
-
-    noticePeriod: "Not Applicable",
-
-    currentCtc: "0",
-
-    submittedAt:
-      "17 Aug 2026, 03:30 pm",
-  },
-
-  {
-    id: 2,
-
-    candidateType: "Experienced",
-
-    name: "Priya S",
-
-    phone: "9876501234",
-
-    email: "priya@gmail.com",
-
-    applyingForPosition:
-      "Business Development Executive",
-
-    qualification: "MBA",
-
-    passingYear: "2023",
-
-    skills:
-      "Business Development, Sales, Communication, Client Handling",
-
-    totalExperience: "3 Years",
-
-    relevantExperience: "2 Years",
-
-    noticePeriod: "30 Days",
-
-    currentCtc: "4.2 LPA",
-
-    submittedAt:
-      "17 Aug 2026, 03:45 pm",
-  },
-];
+import {
+  deleteConsultingApplication,
+  formatSubmittedAt,
+  getConsultingApplications,
+} from "../../../../lib/consultingApi";
 
 export default function ConsultingJobApplicationsPage() {
-  const [applications, setApplications] =
-    useState(INITIAL_APPLICATIONS);
+  const [applications, setApplications] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
 
   const [search, setSearch] = useState("");
 
-  const [selectedApplication, setSelectedApplication] =
-    useState(null);
+  const [selectedApplication, setSelectedApplication] = useState(null);
 
-  const [deleteApplication, setDeleteApplication] =
-    useState(null);
+  const [deleteApplication, setDeleteApplication] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
+
+  const loadApplications = useCallback(async () => {
+    setLoading(true);
+    setLoadError("");
+
+    try {
+      const data = await getConsultingApplications();
+      setApplications(Array.isArray(data) ? data : []);
+    } catch (error) {
+      setLoadError(
+        error.message || "Could not load consulting job applications."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadApplications();
+  }, [loadApplications]);
 
   const filteredApplications = useMemo(() => {
     const value = search.trim().toLowerCase();
@@ -95,13 +54,13 @@ export default function ConsultingJobApplicationsPage() {
 
     return applications.filter((item) => {
       return (
-        item.name.toLowerCase().includes(value) ||
-        item.email.toLowerCase().includes(value) ||
-        item.phone.includes(value) ||
-        item.applyingForPosition
+        (item.name || "").toLowerCase().includes(value) ||
+        (item.email || "").toLowerCase().includes(value) ||
+        (item.phone || "").includes(value) ||
+        (item.applyingForPosition || "")
           .toLowerCase()
           .includes(value) ||
-        item.candidateType
+        (item.candidateType || "")
           .toLowerCase()
           .includes(value)
       );
@@ -110,19 +69,28 @@ export default function ConsultingJobApplicationsPage() {
 
   const handleRefresh = () => {
     setSearch("");
+    loadApplications();
   };
 
-  const confirmDelete = () => {
+  const confirmDelete = async () => {
     if (!deleteApplication) return;
 
-    setApplications((prev) =>
-      prev.filter(
-        (item) =>
-          item.id !== deleteApplication.id
-      )
-    );
+    setDeleting(true);
+    setDeleteError("");
 
-    setDeleteApplication(null);
+    try {
+      await deleteConsultingApplication(deleteApplication.id);
+
+      setApplications((prev) =>
+        prev.filter((item) => item.id !== deleteApplication.id)
+      );
+
+      setDeleteApplication(null);
+    } catch (error) {
+      setDeleteError(error.message || "Could not delete the application.");
+    } finally {
+      setDeleting(false);
+    }
   };
 
   return (
@@ -144,13 +112,31 @@ export default function ConsultingJobApplicationsPage() {
         <button
           type="button"
           onClick={handleRefresh}
-          className="inline-flex w-fit items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+          disabled={loading}
+          className="inline-flex w-fit items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:opacity-60"
         >
-          <RefreshCw className="h-4 w-4" />
+          <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
 
           Refresh
         </button>
       </div>
+
+      {/* ================================
+          LOAD ERROR
+      ================================= */}
+      {loadError && (
+        <div className="mb-5 flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <span>{loadError}</span>
+
+          <button
+            type="button"
+            onClick={loadApplications}
+            className="shrink-0 rounded-md border border-red-300 px-3 py-1 text-xs font-semibold text-red-700 hover:bg-red-100"
+          >
+            Try again
+          </button>
+        </div>
+      )}
 
       {/* ================================
           SEARCH
@@ -263,9 +249,9 @@ export default function ConsultingJobApplicationsPage() {
                     </td>
 
                     <td className="px-4 py-5 text-sm text-slate-500">
-                      {
-                        application.submittedAt
-                      }
+                      {formatSubmittedAt(
+                        application.createdAt
+                      )}
                     </td>
 
                     <td className="px-4 py-5">
@@ -287,11 +273,12 @@ export default function ConsultingJobApplicationsPage() {
                     <td className="px-4 py-5">
                       <button
                         type="button"
-                        onClick={() =>
+                        onClick={() => {
+                          setDeleteError("");
                           setDeleteApplication(
                             application
-                          )
-                        }
+                          );
+                        }}
                         className="text-red-500 transition hover:text-red-700"
                         title="Delete application"
                       >
@@ -302,18 +289,30 @@ export default function ConsultingJobApplicationsPage() {
                 )
               )}
 
-              {filteredApplications.length ===
-                0 && (
-                <tr>
-                  <td
-                    colSpan={9}
-                    className="px-5 py-14 text-center text-sm text-slate-500"
-                  >
-                    No Consulting job
-                    applications found.
-                  </td>
-                </tr>
-              )}
+              {loading &&
+                filteredApplications.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={9}
+                      className="px-5 py-14 text-center text-sm text-slate-500"
+                    >
+                      Loading applications...
+                    </td>
+                  </tr>
+                )}
+
+              {!loading &&
+                filteredApplications.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={9}
+                      className="px-5 py-14 text-center text-sm text-slate-500"
+                    >
+                      No Consulting job
+                      applications found.
+                    </td>
+                  </tr>
+                )}
             </tbody>
           </table>
         </div>
@@ -450,9 +449,9 @@ export default function ConsultingJobApplicationsPage() {
 
               <ApplicationInfo
                 label="Submitted"
-                value={
-                  selectedApplication.submittedAt
-                }
+                value={formatSubmittedAt(
+                  selectedApplication.createdAt
+                )}
               />
 
               {/* Experienced Fields */}
@@ -496,9 +495,19 @@ export default function ConsultingJobApplicationsPage() {
                 </p>
 
                 <div className="mt-2 rounded-md border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-800">
-                  {
-                    selectedApplication.skills
-                  }
+                  {selectedApplication.skills || "-"}
+                </div>
+              </div>
+
+              {/* Profile Summary */}
+              <div className="md:col-span-2">
+                <p className="text-xs font-medium uppercase text-slate-400">
+                  Short Message / Profile Summary
+                </p>
+
+                <div className="mt-2 whitespace-pre-wrap rounded-md border border-slate-300 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-800">
+                  {selectedApplication.profileSummary ||
+                    "-"}
                 </div>
               </div>
             </div>
@@ -538,13 +547,20 @@ export default function ConsultingJobApplicationsPage() {
               ?
             </p>
 
+            {deleteError && (
+              <p className="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+                {deleteError}
+              </p>
+            )}
+
             <div className="mt-6 flex justify-end gap-3">
               <button
                 type="button"
                 onClick={() =>
                   setDeleteApplication(null)
                 }
-                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700"
+                disabled={deleting}
+                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 disabled:opacity-60"
               >
                 Cancel
               </button>
@@ -552,9 +568,10 @@ export default function ConsultingJobApplicationsPage() {
               <button
                 type="button"
                 onClick={confirmDelete}
-                className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+                disabled={deleting}
+                className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 disabled:opacity-60"
               >
-                Delete
+                {deleting ? "Deleting..." : "Delete"}
               </button>
             </div>
           </div>
@@ -573,6 +590,9 @@ function ApplicationInfo({
   value,
   highlight = false,
 }) {
+  const hasValue =
+    value !== null && value !== undefined && value !== "";
+
   return (
     <div>
       <p className="text-xs font-medium uppercase text-slate-400">
@@ -586,7 +606,7 @@ function ApplicationInfo({
             : "text-slate-900"
         }`}
       >
-        {value || "-"}
+        {hasValue ? value : "-"}
       </p>
     </div>
   );
