@@ -205,7 +205,8 @@ export default function Header() {
     return () => window.removeEventListener("hashchange", updateHash);
   }, [pathname]);
 
-  const isCareersActive = pathname === "/careers";
+  const isCareersActive =
+    pathname === "/consult/careers" || pathname.startsWith("/consult/careers/");
 
   const isConsultingOverviewActive = pathname === "/consulting" && !currentHash;
   const isNavActive = (link) => {
@@ -246,7 +247,7 @@ export default function Header() {
                   onMouseEnter={() => {
                     setConsultingOpen(true);
 
-                    if (pathname === "/careers" || isConsultingOverviewActive) {
+                    if (isCareersActive || isConsultingOverviewActive) {
                       setActiveConsultingMenu(null);
                     }
                   }}
@@ -333,7 +334,7 @@ export default function Header() {
                           ))}
 
                           <Link
-                            href="/careers"
+                            href="/consult/careers"
                             onMouseEnter={() => setActiveConsultingMenu(null)}
                             onClick={() => {
                               setConsultingOpen(false);
