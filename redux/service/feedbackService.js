@@ -1,3 +1,5 @@
+import { authHeader } from "../../lib/AuthStore.js";
+
 const API_BASE = (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
 const BASE_URL = `${API_BASE}/api`;
 
@@ -29,7 +31,7 @@ export async function postFeedback(payload, { signal } = {}) {
 
   const res = await fetch(`${BASE_URL}/feedbacks`, {
     method: "POST",
-    headers: JSON_HEADERS,
+    headers: { ...JSON_HEADERS, ...authHeader() },
     body: JSON.stringify(body),
     signal,
   });
@@ -52,7 +54,7 @@ export async function postFeedback(payload, { signal } = {}) {
  * }
  */
 export async function getFeedbacks({ signal } = {}) {
-  const res = await fetch(`${BASE_URL}/feedbacks`, { signal });
+  const res = await fetch(`${BASE_URL}/feedbacks`, { headers: authHeader(), signal });
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(
@@ -63,7 +65,11 @@ export async function getFeedbacks({ signal } = {}) {
 }
 
 export async function deleteFeedback(id, { signal } = {}) {
-  const res = await fetch(`${BASE_URL}/feedbacks/${id}`, { method: "DELETE", signal });
+  const res = await fetch(`${BASE_URL}/feedbacks/${id}`, {
+    method: "DELETE",
+    headers: authHeader(),
+    signal,
+  });
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(
