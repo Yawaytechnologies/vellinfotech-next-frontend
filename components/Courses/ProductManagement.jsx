@@ -241,7 +241,7 @@ export default function ScrumMaster() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/product-management-program",
+      url: "https://www.vellinfotech.com/all-courses/product-management-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

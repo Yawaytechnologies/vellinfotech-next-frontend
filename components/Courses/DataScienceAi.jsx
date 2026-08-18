@@ -242,7 +242,7 @@ export default function JavaCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/data-science-and-ai-program",
+      url: "https://www.vellinfotech.com/all-courses/data-science-and-ai-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

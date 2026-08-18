@@ -241,7 +241,7 @@ export default function JavaCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vell InfoTech", // vel -> vell
-      url: "https://www.vellinfotech.com/all-courses/selenium-testing-program", // vel -> vell
+      url: "https://www.vellinfotech.com/all-courses/selenium-testing-course", // vel -> vell
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

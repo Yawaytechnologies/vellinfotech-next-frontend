@@ -241,7 +241,7 @@ export default function DigitalMarketingPage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.velinfotech.com/all-courses/digital-marketing-program",
+      url: "https://www.velinfotech.com/all-courses/digital-marketing-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

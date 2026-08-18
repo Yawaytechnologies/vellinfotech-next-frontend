@@ -54,7 +54,7 @@ const COURSE_MAP = {
     keywords:
       "full stack development course chennai, full stack training, MERN stack course, web development training",
   },
-  "data-science-training-program": {
+  "data-science-training-course": {
     component: DataScience,
     title: "Data Science Training Program in Chennai",
     description:
@@ -62,7 +62,7 @@ const COURSE_MAP = {
     keywords:
       "data science course chennai, data science training, machine learning course, data analytics chennai",
   },
-  "data-science-and-ai-program": {
+  "data-science-and-ai-course": {
     component: DataScienceAi,
     title: "Data Science and AI Program in Chennai",
     description:
@@ -78,7 +78,7 @@ const COURSE_MAP = {
     keywords:
       "business analytics course chennai, Power BI training, Tableau training, data analytics course",
   },
-  "business-analyst-program": {
+  "business-analyst-course": {
     component: BusinessAnalyst,
     title: "Business Analyst Program in Chennai",
     description:
@@ -86,7 +86,7 @@ const COURSE_MAP = {
     keywords:
       "business analyst course chennai, BA training, business analyst certification, JIRA training",
   },
-  "big-data-developer-program": {
+  "big-data-developer-course": {
     component: BigDataDeveloper,
     title: "Big Data Developer Program in Chennai",
     description:
@@ -110,7 +110,7 @@ const COURSE_MAP = {
     keywords:
       "PL/SQL course chennai, Oracle PL/SQL training, database developer course, SQL developer training",
   },
-  "software-testing-program": {
+  "software-testing-course": {
     component: SoftwareTesting,
     title: "Software Testing Program in Chennai",
     description:
@@ -118,7 +118,7 @@ const COURSE_MAP = {
     keywords:
       "software testing course chennai, manual testing training, QA course, software testing program chennai",
   },
-  "selenium-testing-program": {
+  "selenium-testing-course": {
     component: SeleniumTesting,
     title: "Selenium Testing Program in Chennai",
     description:
@@ -126,7 +126,7 @@ const COURSE_MAP = {
     keywords:
       "selenium testing course chennai, selenium webdriver training, automation testing course, selenium with java",
   },
-  "etl-testing-program": {
+  "etl-testing-course": {
     component: EtlTesting,
     title: "ETL Testing Program in Chennai",
     description:
@@ -142,7 +142,7 @@ const COURSE_MAP = {
     keywords:
       "AWS training chennai, AWS certification course, cloud training chennai, Amazon Web Services course",
   },
-  "devops-training-program": {
+  "devops-training-course": {
     component: DevOps,
     title: "DevOps Training Program in Chennai",
     description:
@@ -150,7 +150,7 @@ const COURSE_MAP = {
     keywords:
       "DevOps course chennai, Docker training, Kubernetes training, DevOps training program",
   },
-  "servicenow-training-program": {
+  "servicenow-training-course": {
     component: ServiceNow,
     title: "ServiceNow Training Program in Chennai",
     description:
@@ -158,7 +158,7 @@ const COURSE_MAP = {
     keywords:
       "ServiceNow training chennai, ServiceNow developer course, ITSM training, ServiceNow certification",
   },
-  "salesforce-training-program": {
+  "salesforce-training-course": {
     component: SalesForce,
     title: "Salesforce Training Program in Chennai",
     description:
@@ -166,7 +166,7 @@ const COURSE_MAP = {
     keywords:
       "Salesforce training chennai, Salesforce developer course, Salesforce admin training, CRM training chennai",
   },
-  "sap-training-program": {
+  "sap-training-course": {
     component: Sap,
     title: "SAP Training Program in Chennai",
     description:
@@ -174,7 +174,7 @@ const COURSE_MAP = {
     keywords:
       "SAP training chennai, SAP course, SAP FICO training, SAP certification chennai",
   },
-  "cyber-security-program": {
+  "cyber-security-course": {
     component: CyberSecurity,
     title: "Cyber Security Program in Chennai",
     description:
@@ -182,7 +182,7 @@ const COURSE_MAP = {
     keywords:
       "cyber security course chennai, ethical hacking training, network security course, information security training",
   },
-  "hardware-and-networking-program": {
+  "hardware-and-networking-course": {
   component: HardwareNetworking,
   title: "Hardware and Networking Course in Chennai",
   description:
@@ -190,7 +190,7 @@ const COURSE_MAP = {
   keywords:
     "hardware networking course chennai, hardware course in chennai, networking course in chennai, LAN WAN training, router switch training, hardware engineer course",
  },
-  "product-management-program": {
+  "product-management-course": {
     component: ProductManagement,
     title: "Product Management Program in Chennai",
     description:
@@ -198,7 +198,7 @@ const COURSE_MAP = {
     keywords:
       "product management course chennai, product manager training, agile product management, PM certification",
   },
-  "scrum-master-program": {
+  "scrum-master-course": {
     component: ScrumMaster,
     title: "Scrum Master Program in Chennai",
     description:
@@ -214,7 +214,7 @@ const COURSE_MAP = {
     keywords:
       "RPA course chennai, UiPath training, robotic process automation, automation anywhere training",
   },
-  "digital-marketing-program": {
+  "digital-marketing-course": {
     component: DigitalMarketing,
     title: "Digital Marketing Program in Chennai",
     description:
@@ -230,7 +230,7 @@ const COURSE_MAP = {
     keywords:
       "soft skills training chennai, communication skills course, interview preparation training, personality development",
   },
-  "production-support-program": {
+  "production-support-course": {
     component: ProductionSupport,
     title: "Production Support Program in Chennai",
     description:

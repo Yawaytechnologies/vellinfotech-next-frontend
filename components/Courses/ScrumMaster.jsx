@@ -239,7 +239,7 @@ export default function ScrumMaster() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/scrum-master-program",
+      url: "https://www.vellinfotech.com/all-courses/scrum-master-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

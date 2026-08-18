@@ -243,7 +243,7 @@ export default function JavaCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/big-data-developer-program",
+      url: "https://www.vellinfotech.com/all-courses/big-data-developer-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

@@ -240,7 +240,7 @@ export default function DevOpsCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/devops-training-program",
+      url: "https://www.vellinfotech.com/all-courses/devops-training-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

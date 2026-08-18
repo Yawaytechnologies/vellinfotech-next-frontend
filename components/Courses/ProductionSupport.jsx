@@ -240,7 +240,7 @@ export default function ProductionSupportPage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/production-support-program",
+      url: "https://www.vellinfotech.com/all-courses/production-support-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

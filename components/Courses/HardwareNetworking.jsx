@@ -242,7 +242,7 @@ export default function JavaCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/hardware-and-networking-program",
+      url: "https://www.vellinfotech.com/all-courses/hardware-and-networking-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

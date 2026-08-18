@@ -239,7 +239,7 @@ export default function EtlTesting() {
     provider: {
       "@type": "Organization",
       name: "Vell InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/etl-testing-program",
+      url: "https://www.vellinfotech.com/all-courses/etl-testing-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

@@ -241,7 +241,7 @@ export default function ScrumMaster() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/business-analyst-program",
+      url: "https://www.vellinfotech.com/all-courses/business-analyst-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

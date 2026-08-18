@@ -19,48 +19,48 @@ const groupedCourses = [
   {
     category: "Data Science & Analytics",
     items: [
-      { name: "Data Science", slug: "data-science-training-program" },
+      { name: "Data Science", slug: "data-science-training-course" },
       { name: "Business Analytics", slug: "business-analytics-course" },
-      { name: "Data Science & AI", slug: "data-science-and-ai-program" },
-      { name: "Big Data Developer", slug: "big-data-developer-program" },
+      { name: "Data Science & AI", slug: "data-science-and-ai-course" },
+      { name: "Big Data Developer", slug: "big-data-developer-course" },
     ],
   },
   {
     category: "Non Coding Courses",
     items: [
-      { name: "Scrum Master", slug: "scrum-master-program" },
-      { name: "Business Analyst", slug: "business-analyst-program" },
-      { name: "Product Management", slug: "product-management-program" },
+      { name: "Scrum Master", slug: "scrum-master-course" },
+      { name: "Business Analyst", slug: "business-analyst-course" },
+      { name: "Product Management", slug: "product-management-course" },
     ],
   },
   {
     category: "Testing",
     items: [
-      { name: "Software Testing", slug: "software-testing-program" },
-      { name: "Selenium Testing", slug: "selenium-testing-program" },
-      { name: "ETL Testing", slug: "etl-testing-program" },
+      { name: "Software Testing", slug: "software-testing-course" },
+      { name: "Selenium Testing", slug: "selenium-testing-course" },
+      { name: "ETL Testing", slug: "etl-testing-course" },
     ],
   },
   {
     category: "Cloud Computing",
     items: [
       { name: "AWS Training", slug: "aws-training-program" },
-      { name: "DevOps", slug: "devops-training-program" },
+      { name: "DevOps", slug: "devops-training-course" },
     ],
   },
   {
     category: "IT Infrastructure",
     items: [
-      { name: "Hardware Networking", slug: "hardware-and-networking-program" },
-      { name: "Cyber Security", slug: "cyber-security-program" },
+      { name: "Hardware Networking", slug: "hardware-and-networking-course" },
+      { name: "Cyber Security", slug: "cyber-security-course" },
     ],
   },
   {
     category: "Business Solutions",
     items: [
-      { name: "SAP", slug: "sap-training-program" },
-      { name: "Salesforce", slug: "salesforce-training-program" },
-      { name: "ServiceNow", slug: "servicenow-training-program" },
+      { name: "SAP", slug: "sap-training-course" },
+      { name: "Salesforce", slug: "salesforce-training-course" },
+      { name: "ServiceNow", slug: "servicenow-training-course" },
       {
         name: "RPA (Robotic Process Automation)",
         slug: "rpa-robotic-process-automation-course",
@@ -69,11 +69,11 @@ const groupedCourses = [
   },
   {
     category: "IT Operations",
-    items: [{ name: "Production Support", slug: "production-support-program" }],
+    items: [{ name: "Production Support", slug: "production-support-course" }],
   },
   {
     category: "Business & Marketing",
-    items: [{ name: "Digital Marketing", slug: "digital-marketing-program" }],
+    items: [{ name: "Digital Marketing", slug: "digital-marketing-course" }],
   },
   {
     category: "Professional Development",

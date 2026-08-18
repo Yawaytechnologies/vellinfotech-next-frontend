@@ -243,7 +243,7 @@ export default function SoftwareTesting() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/software-testing-program",
+      url: "https://www.vellinfotech.com/all-courses/software-testing-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

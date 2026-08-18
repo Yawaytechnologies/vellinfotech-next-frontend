@@ -233,7 +233,7 @@ export default function DataScienceCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/data-science-training-program",
+      url: "https://www.vellinfotech.com/all-courses/data-science-training-course",
       logo: "https://www.vellinfotech.com/logo.png",
     },
     hasCourseInstance: [
@@ -249,7 +249,7 @@ export default function DataScienceCoursePage() {
           "@type": "Offer",
           priceCurrency: "INR",
           availability: "https://schema.org/InStock",
-          url: "https://www.vellinfotech.com/all-courses/data-science-training-program",
+          url: "https://www.vellinfotech.com/all-courses/data-science-training-course",
         },
       },
       {
@@ -259,7 +259,7 @@ export default function DataScienceCoursePage() {
           "@type": "Offer",
           priceCurrency: "INR",
           availability: "https://schema.org/InStock",
-          url: "https://www.vellinfotech.com/all-courses/data-science-training-program",
+          url: "https://www.vellinfotech.com/all-courses/data-science-training-course",
         },
       },
     ],

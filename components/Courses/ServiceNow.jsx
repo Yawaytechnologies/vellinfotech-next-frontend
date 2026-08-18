@@ -240,7 +240,7 @@ export default function JavaCoursePage() {
     provider: {
       "@type": "Organization",
       name: "Vel InfoTech",
-      url: "https://www.vellinfotech.com/all-courses/servicenow-training-program",
+      url: "https://www.vellinfotech.com/all-courses/servicenow-training-course",
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

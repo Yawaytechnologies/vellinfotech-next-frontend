@@ -24,8 +24,8 @@ const COURSE_GROUPS = [
     label: "Cloud Computing Training",
     sub: [
       { name: "AWS Training", slug: "aws-training-program" },
-      { name: "DevOps", slug: "devops-training-program" },
-      { name: "Production Support", slug: "production-support-program" },
+      { name: "DevOps", slug: "devops-training-course" },
+      { name: "Production Support", slug: "production-support-course" },
     ],
   },
   {
@@ -38,9 +38,9 @@ const COURSE_GROUPS = [
   {
     label: "Software Testing",
     sub: [
-      { name: "Software Testing", slug: "software-testing-program" },
-      { name: "Selenium Testing", slug: "selenium-testing-program" },
-      { name: "ETL Testing", slug: "etl-testing-program" },
+      { name: "Software Testing", slug: "software-testing-course" },
+      { name: "Selenium Testing", slug: "selenium-testing-course" },
+      { name: "ETL Testing", slug: "etl-testing-course" },
     ],
   },
   {
@@ -61,10 +61,10 @@ const COURSE_GROUPS = [
   {
     label: "Data Science & AI",
     sub: [
-      { name: "Data Science", slug: "data-science-training-program" },
-      { name: "AI", slug: "data-science-and-ai-program" },
+      { name: "Data Science", slug: "data-science-training-course" },
+      { name: "AI", slug: "data-science-and-ai-course" },
       { name: "Business Analytics", slug: "business-analytics-course" },
-      { name: "Big Data Developer", slug: "big-data-developer-program" },
+      { name: "Big Data Developer", slug: "big-data-developer-course" },
     ],
   },
 ];
