@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#e9f1fb] text-black-200 pt-10 pb-3 border-t-4 border-[#005BAC]">
+    <footer className="relative !bg-[#e9f1fb] !text-black pt-10 pb-3 border-t-4 border-[#005BAC]">
       {/* Top shadow separator */}
       <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-b from-black/20 to-transparent" />
 
@@ -20,7 +20,7 @@ export default function Footer() {
                 className=" h-40 w-auto object-contain"
               />
             </div>
-            <p className="text-black-400 text-md mt-8 mb-8 font-bold ">
+            <p className="!text-black text-md mt-8 mb-8 font-bold">
               Empowering your career with industry-ready IT and tech skills.
               Learn from experts. Build your future.
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
                 <FaLinkedin size={22} />
               </a>
               <a
-                href="https://www.instagram.com/velinfo_tech?igsh=MW1uZWxyOHI0NTRqOA=="
+                href="https://www.instagram.com/vell_infotech/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-400"
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-black font-bold text-lg mb-3 underline">
+            <h3 className="!text-black font-bold text-lg mb-3 underline">
               Quick Links
             </h3>
             <ul className="space-y-2 text-sm">
@@ -280,7 +280,7 @@ export default function Footer() {
             </h3>
             <ul className="text-sm space-y-2 font-bold ">
               <li>
-                <span className="block text-black-400">
+                <span className="block !text-black">
                   Vell Infotech Private Limited
                 </span>
                 <span> Software training & Placement</span>
@@ -312,7 +312,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-xs text-black-400">
+        <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-xs !text-black">
           <span>
             &copy; {new Date().getFullYear()} Vell Infotech. All rights
             reserved.

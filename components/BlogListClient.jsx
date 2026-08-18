@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
@@ -20,7 +20,10 @@ const cardVariants = {
 
 function readTime(content) {
   if (!content) return 1;
-  const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  const words = content
+    .replace(/<[^>]+>/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
 }
 
@@ -61,7 +64,7 @@ export default function BlogListClient({
   const isFiltered = Boolean(search.trim() || category);
 
   return (
-    <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10">
+    <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-8">
       {/* LEFT — list of articles */}
       <div className="min-w-0">
         {isFiltered && (
@@ -71,12 +74,14 @@ export default function BlogListClient({
               {filteredPosts.length === 1 ? "article" : "articles"}
               {category && (
                 <>
-                  {" "}in <span className="font-semibold">{category}</span>
+                  {" "}
+                  in <span className="font-semibold">{category}</span>
                 </>
               )}
               {search.trim() && (
                 <>
-                  {" "}matching{" "}
+                  {" "}
+                  matching{" "}
                   <span className="font-semibold">
                     &ldquo;{search.trim()}&rdquo;
                   </span>
@@ -136,7 +141,9 @@ export default function BlogListClient({
                         alt={post.title || "Blog post image"}
                         className="h-32 w-full transform object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
-                        onError={(e) => { e.target.src = "/images/career.jpg"; }}
+                        onError={(e) => {
+                          e.target.src = "/images/career.jpg";
+                        }}
                       />
                       <div
                         className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -151,7 +158,9 @@ export default function BlogListClient({
                       <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[9px] uppercase tracking-wide">
                         {post.category || "Articles"}
                       </span>
-                      <span className="text-[10px] text-slate-400">{mins} min read</span>
+                      <span className="text-[10px] text-slate-400">
+                        {mins} min read
+                      </span>
                     </div>
 
                     <Link href={href}>

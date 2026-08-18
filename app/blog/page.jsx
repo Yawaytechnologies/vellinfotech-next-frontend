@@ -112,7 +112,7 @@ export default async function BlogPage({ searchParams }) {
         className="w-full bg-[#E7EFF7]"
         aria-labelledby="latest-articles-heading"
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
+        <div className="w-full max-w-[2200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-8">
           <header className="mb-5 text-center">
             <h2
               id="latest-articles-heading"
