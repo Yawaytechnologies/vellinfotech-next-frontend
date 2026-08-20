@@ -32,16 +32,46 @@ const BASE = "https://www.vellinfotech.com";
  * and anything already shared, with nothing to keep in sync.
  */
 async function resolvePost(param) {
-  if (/^\d+$/.test(param)) {
-    const legacy = await fetchBlogPostById(param);
+  if (!param) return null;
 
-    // permanentRedirect throws to unwind, so nothing after it runs.
-    if (legacy?.slug) permanentRedirect(`/blog/${legacy.slug}`);
+  // Decode encoded URL:
+  // What%20is%20Data%20Engineering
+  // becomes:
+  // What is Data Engineering
+  let decodedParam = param;
+
+  try {
+    decodedParam = decodeURIComponent(param);
+  } catch {
+    decodedParam = param;
+  }
+
+  decodedParam = decodedParam.trim();
+
+  // Old numeric URL: /blog/8
+  if (/^\d+$/.test(decodedParam)) {
+    const legacy = await fetchBlogPostById(decodedParam);
+
+    if (legacy?.slug) {
+      permanentRedirect(`/blog/${legacy.slug}`);
+    }
 
     return null;
   }
 
-  return fetchBlogPostBySlug(param);
+  // Convert old URL/title into clean SEO slug
+  const normalizedSlug = decodedParam
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  // Redirect only when old URL is different from clean slug
+  if (normalizedSlug !== decodedParam) {
+    permanentRedirect(`/blog/${normalizedSlug}`);
+  }
+
+  return fetchBlogPostBySlug(normalizedSlug);
 }
 
 export async function generateMetadata({ params }) {

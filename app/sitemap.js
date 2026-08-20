@@ -1,7 +1,19 @@
 import { fetchBlogPosts, fetchJobPosts } from "../lib/api";
 
 const BASE = "https://www.vellinfotech.com";
+function getValidLastModified(...values) {
+  for (const value of values) {
+    if (!value) continue;
 
+    const date = new Date(value);
+
+    if (!Number.isNaN(date.getTime())) {
+      return date.toISOString();
+    }
+  }
+
+  return null;
+}
 const STATIC_ROUTES = [
   { url: `${BASE}/`, priority: 1.0, changeFrequency: "weekly" },
   { url: `${BASE}/about`, priority: 1.0, changeFrequency: "monthly" },
@@ -15,7 +27,11 @@ const STATIC_ROUTES = [
   { url: `${BASE}/blog`, priority: 1.0, changeFrequency: "daily" },
   { url: `${BASE}/careers`, priority: 1.0, changeFrequency: "daily" },
   { url: `${BASE}/tutorials`, priority: 1.0, changeFrequency: "weekly" },
-  { url: `${BASE}/interview-questions`, priority: 1.0, changeFrequency: "monthly" },
+  {
+    url: `${BASE}/interview-questions`,
+    priority: 1.0,
+    changeFrequency: "monthly",
+  },
   { url: `${BASE}/privacy`, priority: 0.3, changeFrequency: "yearly" },
 ];
 
@@ -91,19 +107,27 @@ export default async function sitemap() {
   // Slug-based now; posts without one are skipped rather than emitting /blog/undefined.
   const blogRoutes = blogPosts
     .filter((post) => post.slug)
-    .map((post) => ({
-      url: `${BASE}/blog/${post.slug}`,
+    .map((post) => {
+      const lastModified = getValidLastModified(post.updatedAt, post.createdAt);
+
+      return {
+        url: `${BASE}/blog/${post.slug}`,
+        changeFrequency: "weekly",
+        priority: 0.8,
+        ...(lastModified && { lastModified }),
+      };
+    });
+
+  const jobRoutes = jobs.map((job) => {
+    const lastModified = getValidLastModified(job.updatedAt, job.createdAt);
+
+    return {
+      url: `${BASE}/careers/${job.id}`,
       changeFrequency: "weekly",
       priority: 0.8,
-      lastModified: post.updatedAt || post.createdAt || new Date().toISOString(),
-    }));
-
-  const jobRoutes = jobs.map((job) => ({
-    url: `${BASE}/careers/${job.id}`,
-    changeFrequency: "weekly",
-    priority: 0.8,
-    lastModified: job.updatedAt || new Date().toISOString(),
-  }));
+      ...(lastModified && { lastModified }),
+    };
+  });
 
   return [
     ...STATIC_ROUTES,
