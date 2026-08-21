@@ -7,6 +7,7 @@ import FullStackDevelopement from "../../../components/Courses/FullStackDevelope
 import DataScience from "../../../components/Courses/DataScience";
 import DataScienceAi from "../../../components/Courses/DataScienceAi";
 import BusinessAnalytics from "../../../components/Courses/BusinessAnalytics";
+import DataEngineering from "../../../components/Courses/DataEngineering";
 import BusinessAnalyst from "../../../components/Courses/BusinessAnalyst";
 import BigDataDeveloper from "../../../components/Courses/BigDataDeveloper";
 import Sql from "../../../components/Courses/Sql";
@@ -70,6 +71,14 @@ const COURSE_MAP = {
     keywords:
       "data science and AI course chennai, artificial intelligence training, AI course with placement, deep learning course",
   },
+  "data-engineering-course": {
+  component: DataEngineering,
+  title: "Data Engineering Course in Chennai",
+  description:
+    "Join Vell InfoTech's Data Engineering Course in Chennai and learn Python, SQL, Big Data, AWS, Azure, ETL, data pipelines and cloud data engineering with practical training.",
+  keywords:
+    "data engineering course in chennai, data engineering training chennai, data engineer course, AWS data engineering course, big data training",
+},
   "business-analytics-course": {
     component: BusinessAnalytics,
     title: "Business Analytics Course in Chennai",

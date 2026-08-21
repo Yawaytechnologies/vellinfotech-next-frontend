@@ -22,6 +22,7 @@ const groupedCourses = [
       { name: "Data Science", slug: "data-science-training-course" },
       { name: "Business Analytics", slug: "business-analytics-course" },
       { name: "Data Science & AI", slug: "data-science-and-ai-course" },
+      { name: "Data Engineering", slug: "data-engineering-course" },
       { name: "Big Data Developer", slug: "big-data-developer-course" },
     ],
   },

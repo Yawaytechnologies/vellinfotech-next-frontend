@@ -64,6 +64,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/all-courses/DataEngineering",
+        destination: "/all-courses/data-engineering-course",
+        permanent: true,
+      },
+      {
         source: "/all-courses/BigDataDeveloper",
         destination: "/all-courses/big-data-developer-course",
         permanent: true,
