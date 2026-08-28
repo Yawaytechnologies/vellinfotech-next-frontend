@@ -169,7 +169,254 @@ export const SYLLABI = {
       },
     ],
   },
-    python: {
+
+  genai: {
+    title: "Artificial Intelligence and GENERATIVE AI TRAINING SYLLABUS",
+    accent: "#005BAC",
+
+    meta: {
+      duration: "12-16 weeks",
+      audience: "Students, Engineers, Analysts, Professionals",
+      level: "Intermediate → Advanced",
+      mode: "Online / Classroom",
+      schedule: "Weekday & Weekend Batches",
+    },
+
+    preview: [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "NLP",
+      "Transformers",
+      "LLMs",
+      "OpenAI",
+      "LangChain",
+      "LangGraph",
+      "CrewAI",
+      "AutoGen",
+      "MCP",
+      "RAG",
+      "FAISS",
+      "Pinecone",
+      "Chroma",
+      "AI Agents",
+      "LLMOps",
+      "FastAPI",
+      "Streamlit",
+      "Docker",
+      "AWS",
+      "Azure",
+    ],
+
+    sections: [
+      {
+        title: "Module 1: Python Basics",
+        items: [
+          "What is Python & setup (Anaconda, VS Code, Jupyter)",
+          "Variables, Data Types",
+          "Input / Output",
+          "Operators",
+          "Conditional statements (if, elif, else)",
+          "Loops (for, while)",
+        ],
+      },
+
+      {
+        title: "Module 2: Data Structures",
+        items: [
+          "Lists, Tuples, Sets, Dictionaries",
+          "List comprehension",
+          "Nested structures",
+        ],
+      },
+
+      {
+        title: "Module 3: Functions & OOP",
+        items: [
+          "Functions, *args, **kwargs",
+          "Lambda functions",
+          "Classes & Objects",
+          "Inheritance, Encapsulation, Polymorphism",
+        ],
+      },
+
+      {
+        title: "Module 4: File Handling & Exception Handling",
+        items: ["Read/Write files", "Try-except blocks", "Logging basics"],
+      },
+
+      {
+        title: "Module 5: Libraries for AI",
+        items: ["NumPy", "Pandas", "Matplotlib / Seaborn", "Basic EDA"],
+      },
+
+      {
+        title: "Module 6: APIs & Automation",
+        items: ["Requests library", "REST API basics", "JSON handling"],
+      },
+
+      {
+        title: "Module 7: Memory Management",
+        items: ["Multi Threading", "Logging", "Pytest", "Mini Projects"],
+      },
+
+      {
+        title: "GENERATIVE AI (CORE → ADVANCED → PROJECTS)",
+        items: [
+          "NLP Foundations",
+          "Text preprocessing",
+          "Tokenization",
+          "Stopwords",
+          "Stemming / Lemmatization",
+
+          "Text Representation",
+          "Bag of Words",
+          "TF-IDF",
+          "Word2Vec / Embeddings",
+
+          "Deep Learning Basics for NLP",
+          "RNN, LSTM (conceptual)",
+          "Attention mechanism",
+          "Transformers (very important)",
+
+          "Large Language Models (LLMs)",
+          "What are LLMs",
+          "GPT, Claude, LLaMA, Gemini overview",
+          "Prompt Engineering",
+          "Zero-shot / Few-shot learning",
+
+          "LangChain",
+          "Chains",
+          "Prompts",
+          "Memory",
+          "Tools",
+          "Agents (intro)",
+
+          "Vector Databases",
+          "Embeddings",
+          "FAISS / Pinecone / Chroma",
+          "Similarity search",
+
+          "RAG (MOST IMPORTANT)",
+          "What is RAG",
+          "Chunking strategies",
+          "Embedding + Retrieval",
+          "Building Q&A system",
+
+          "Advanced Gen AI",
+          "Fine-tuning basics",
+          "Open-source models",
+          "Multimodal AI",
+          "Guardrails",
+
+          "Projects (MANDATORY)",
+          "Chatbot using OpenAI",
+          "PDF Q&A (RAG system)",
+          "Resume Analyzer",
+          "Document Search Engine",
+        ],
+      },
+
+      {
+        title: "🤖 AGENTIC AI (ADVANCED + INDUSTRY LEVEL)",
+        items: [
+          "Introduction to AI Agents",
+          "What is Agentic AI",
+          "Difference: LLM vs Agent",
+          "Use cases (automation, workflows)",
+
+          "Agent Frameworks",
+          "GitHub",
+          "LangChain Agents",
+          "LangGraph",
+          "CrewAI",
+          "AutoGen",
+          "MCP (Model Context Protocol)",
+
+          "Tools & Tool Calling",
+          "Function calling",
+          "API integration",
+          "Custom tools",
+
+          "Multi-Agent Systems",
+          "Agent collaboration",
+          "Task delegation",
+          "Workflow orchestration",
+
+          "Memory & Planning",
+          "Short-term vs long-term memory",
+          "Planning agents",
+          "Reflection loops",
+
+          "Agent + RAG Systems",
+          "Combining RAG + Agents",
+          "Autonomous Q&A systems",
+
+          "LLMOps (Very important)",
+          "Monitoring",
+          "Evaluation",
+          "Logging",
+          "Cost optimization",
+
+          "Deployment",
+          "Streamlit / FastAPI",
+          "Docker basics",
+          "Cloud (AWS / Azure)",
+        ],
+      },
+
+      {
+        title: "FINAL PROJECTS (VERY IMPORTANT)",
+        items: [
+          "AI Customer Support Agent",
+          "Multi-Agent Report Generator",
+          "Autonomous Data Analyst",
+          "AI Automation Workflow (email / ticket system)",
+        ],
+      },
+
+      {
+        title: "Real-Time Projects",
+        items: [
+          "AI Resume Analyzer",
+          "AI Email Assistant",
+          "AI Content Generator",
+          "AI HR Assistant",
+          "AI Test Case Generator",
+          "Enterprise RAG Chatbot",
+          "AI Recruitment Platform",
+          "Multi-Agent Business Assistant",
+        ],
+      },
+
+      {
+        title: "Career Opportunities",
+        items: [
+          "AI Engineer",
+          "Generative AI Developer",
+          "Machine Learning Engineer",
+          "LLM Engineer",
+          "Prompt Engineer",
+          "AI Automation Engineer",
+          "Data Analyst",
+          "Junior Data Scientist",
+        ],
+      },
+
+      {
+        title: "Program Benefits",
+        items: [
+          "Hands-on Practical Training",
+          "Real-Time Industry Projects",
+          "Resume Building Support",
+          "GitHub Portfolio Development",
+          "Mock Interviews",
+          "Placement Assistance",
+        ],
+      },
+    ],
+  },
+  python: {
     title: "Python Online Training — Syllabus",
     accent: "#005BAC", // Python blue
     meta: {
@@ -330,7 +577,7 @@ export const SYLLABI = {
     ],
   },
 
- fullstack: {
+  fullstack: {
     title: "Full Stack Development — Syllabus",
     accent: "#005BAC", // Teal-ish accent
     meta: {
@@ -454,7 +701,7 @@ export const SYLLABI = {
       },
     ],
   },
-   plsql: {
+  plsql: {
     title: "PL/SQL Online Training — Syllabus",
     accent: "#005BAC", // Oracle PL/SQL orange
     meta: {
@@ -578,7 +825,7 @@ export const SYLLABI = {
       },
     ],
   },
-   sql: {
+  sql: {
     title: "SQL Online Training — Syllabus",
     accent: "#005BAC", // SQL DB blue
     meta: {
@@ -711,7 +958,7 @@ export const SYLLABI = {
       },
     ],
   },
-  
+
   datascience: {
     title: "Data Science Online Training — Syllabus",
     accent: "#005BAC", // Indigo for Data Science
@@ -854,7 +1101,7 @@ export const SYLLABI = {
       },
     ],
   },
- businessanalytics: {
+  businessanalytics: {
     title: "Business Analytics Online Training — Syllabus",
     accent: "#005BAC", // Coral orange
     meta: {
@@ -960,7 +1207,7 @@ export const SYLLABI = {
       },
     ],
   },
-   datascienceai: {
+  datascienceai: {
     title: "Data Science & AI Online Training — Syllabus",
     accent: "#005BAC", // AI-inspired blue
     meta: {
@@ -1436,7 +1683,7 @@ export const SYLLABI = {
       },
     ],
   },
-   aws: {
+  aws: {
     title: "AWS Online Training — Syllabus",
     accent: "#005BAC", // AWS orange
     meta: {
@@ -1844,7 +2091,7 @@ export const SYLLABI = {
       },
     ],
   },
-   sap: {
+  sap: {
     title: "SAP Online Training — Syllabus",
     accent: "#005BAC", // SAP blue-green
     meta: {
@@ -2070,7 +2317,8 @@ export const SYLLABI = {
     accent: "#005BAC", // Orange for Automation
     meta: {
       duration: "8–10 weeks",
-      audience: "Students, Business Analysts, QA Engineers, Automation Developers",
+      audience:
+        "Students, Business Analysts, QA Engineers, Automation Developers",
       level: "Beginner → Intermediate",
       mode: "Online / Classroom",
       schedule: "Weekday & Weekend Batches",
@@ -2143,7 +2391,7 @@ export const SYLLABI = {
       },
     ],
   },
-    productionsupport: {
+  productionsupport: {
     title: "Production Support Online Training — Syllabus",
     accent: "#34495E", // Steel gray
     meta: {
@@ -2378,7 +2626,7 @@ export const SYLLABI = {
       },
     ],
   },
-   scrummaster: {
+  scrummaster: {
     title: "Scrum Master Online Training — Syllabus",
     accent: "#005BAC", // Dark navy
     meta: {
@@ -2458,7 +2706,8 @@ export const SYLLABI = {
     accent: "#005BAC", // Purple
     meta: {
       duration: "8–10 weeks",
-      audience: "Students, Business Leaders, Startup Founders, Product Managers",
+      audience:
+        "Students, Business Leaders, Startup Founders, Product Managers",
       level: "Beginner → Intermediate",
       mode: "Online / Classroom",
       schedule: "Weekday & Weekend Batches",
@@ -2533,7 +2782,8 @@ export const SYLLABI = {
     accent: "#005BAC", // Blue
     meta: {
       duration: "8–10 weeks",
-      audience: "Students, Business Analysts, Project Coordinators, Consultants",
+      audience:
+        "Students, Business Analysts, Project Coordinators, Consultants",
       level: "Beginner → Intermediate",
       mode: "Online / Classroom",
       schedule: "Weekday & Weekend Batches",
@@ -2569,11 +2819,7 @@ export const SYLLABI = {
       },
       {
         title: "Module 3: Process & Modeling",
-        items: [
-          "UML basics",
-          "Process flow diagrams",
-          "Wireframes & mockups",
-        ],
+        items: ["UML basics", "Process flow diagrams", "Wireframes & mockups"],
       },
       {
         title: "Module 4: Agile BA",

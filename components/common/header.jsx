@@ -14,6 +14,10 @@ const groupedCourses = [
       { name: "Full Stack Development", slug: "full-stack-development-course" },
       { name: "PL SQL", slug: "pl-sql-developer-course" },
       { name: "SQL", slug: "sql-developer-course" },
+      {
+        name: "Generative AI",
+        slug: "artificial-intelligence-and-gen-ai-course",
+      },
     ],
   },
   {

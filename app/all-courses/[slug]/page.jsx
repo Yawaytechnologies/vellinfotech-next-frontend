@@ -28,6 +28,7 @@ import RPA from "../../../components/Courses/RPA";
 import DigitalMarketing from "../../../components/Courses/DigitalMarketing";
 import SoftSkillsTraining from "../../../components/Courses/SoftSkillsTraining";
 import ProductionSupport from "../../../components/Courses/ProductionSupport";
+import GenerativeAI from "../../../components/Courses/GenerativeAi";
 
 // ── Course map ──────────────────────────────────────────────────────────────
 const COURSE_MAP = {
@@ -71,14 +72,24 @@ const COURSE_MAP = {
     keywords:
       "data science and AI course chennai, artificial intelligence training, AI course with placement, deep learning course",
   },
+
+  "artificial-intelligence-and-gen-ai-course": {
+    component: GenerativeAI,
+    title: "Generative AI Course in Chennai",
+    description:
+      "Learn Generative AI, Large Language Models, Prompt Engineering, AI Agents and real-time AI applications with Vell InfoTech.",
+    keywords:
+      "generative ai course chennai, gen ai training, llm course, prompt engineering course",
+  },
+
   "data-engineering-course": {
-  component: DataEngineering,
-  title: "Data Engineering Course in Chennai",
-  description:
-    "Join Vell InfoTech's Data Engineering Course in Chennai and learn Python, SQL, Big Data, AWS, Azure, ETL, data pipelines and cloud data engineering with practical training.",
-  keywords:
-    "data engineering course in chennai, data engineering training chennai, data engineer course, AWS data engineering course, big data training",
-},
+    component: DataEngineering,
+    title: "Data Engineering Course in Chennai",
+    description:
+      "Join Vell InfoTech's Data Engineering Course in Chennai and learn Python, SQL, Big Data, AWS, Azure, ETL, data pipelines and cloud data engineering with practical training.",
+    keywords:
+      "data engineering course in chennai, data engineering training chennai, data engineer course, AWS data engineering course, big data training",
+  },
   "business-analytics-course": {
     component: BusinessAnalytics,
     title: "Business Analytics Course in Chennai",
@@ -192,13 +203,13 @@ const COURSE_MAP = {
       "cyber security course chennai, ethical hacking training, network security course, information security training",
   },
   "hardware-and-networking-course": {
-  component: HardwareNetworking,
-  title: "Hardware and Networking Course in Chennai",
-  description:
-    "Join the Hardware and Networking Course in Chennai at Vell InfoTech. Get practical training in computer hardware, LAN/WAN, routers, switches, IP addressing, troubleshooting and placement assistance.",
-  keywords:
-    "hardware networking course chennai, hardware course in chennai, networking course in chennai, LAN WAN training, router switch training, hardware engineer course",
- },
+    component: HardwareNetworking,
+    title: "Hardware and Networking Course in Chennai",
+    description:
+      "Join the Hardware and Networking Course in Chennai at Vell InfoTech. Get practical training in computer hardware, LAN/WAN, routers, switches, IP addressing, troubleshooting and placement assistance.",
+    keywords:
+      "hardware networking course chennai, hardware course in chennai, networking course in chennai, LAN WAN training, router switch training, hardware engineer course",
+  },
   "product-management-course": {
     component: ProductManagement,
     title: "Product Management Program in Chennai",
