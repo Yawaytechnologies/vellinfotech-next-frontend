@@ -64,6 +64,7 @@ const groupedCourses = [
     category: "Business Solutions",
     items: [
       { name: "SAP", slug: "sap-training-course" },
+      { name: "SAP Security and GRC", slug: "sap-security-and-grc-course" },
       { name: "Salesforce", slug: "salesforce-training-course" },
       { name: "ServiceNow", slug: "servicenow-training-course" },
       {

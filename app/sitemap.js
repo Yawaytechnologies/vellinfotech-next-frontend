@@ -54,6 +54,7 @@ const COURSE_SLUGS = [
   "servicenow-training-course",
   "salesforce-training-course",
   "sap-training-course",
+  "sap-security-and-grc-course",
   "cyber-security-course",
   "hardware-and-networking-course",
   "product-management-course",
