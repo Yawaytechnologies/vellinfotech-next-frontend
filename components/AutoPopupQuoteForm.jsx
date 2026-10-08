@@ -301,6 +301,7 @@ lg:items-center lg:justify-center"
                       "Hardware Networking",
                       "Cyber Security",
                       "SAP",
+                      "SAP Security and GRC",
                       "Salesforce",
                       "ServiceNow",
                       "RPA (Robotic Process Automation)",

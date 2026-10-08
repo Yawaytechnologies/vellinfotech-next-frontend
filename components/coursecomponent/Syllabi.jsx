@@ -2091,6 +2091,25 @@ export const SYLLABI = {
       },
     ],
   },
+  sapSecurityGrc: {
+    title: "SAP Security and GRC — Syllabus",
+    accent: "#005BAC",
+    meta: {
+      duration: "12–14 weeks",
+      audience: "Students, SAP Consultants, IT Professionals",
+      level: "Beginner → Intermediate",
+      mode: "Online / Classroom",
+      schedule: "Weekday & Weekend Batches",
+    },
+    preview: ["SAP Security Fundamentals", "User Administration", "Roles and Authorizations", "Authorization Troubleshooting", "SAP GRC Access Control", "Segregation of Duties", "Access Risk Analysis", "Access Request Management", "Emergency Access Management", "Capstone Project"],
+    sections: [
+      { title: "Module 1: SAP Security Fundamentals", items: ["SAP architecture, landscape, and navigation", "Security concepts and authorization objects", "User types and user administration", "User access lifecycle"] },
+      { title: "Module 2: Roles and Authorizations", items: ["Role maintenance with PFCG", "Single, composite, and derived roles", "Authorization profiles and role assignments", "Authorization troubleshooting and traces"] },
+      { title: "Module 3: SAP GRC Access Control", items: ["Governance, risk, and compliance fundamentals", "Access Control overview", "Segregation of duties and critical access", "Access risk analysis and mitigation controls"] },
+      { title: "Module 4: Access Management", items: ["Access request management and approval workflows", "Business role management", "Emergency access management", "Compliance reporting and access reviews"] },
+      { title: "Module 5: Capstone Project", items: ["Design roles for a business scenario", "Identify and mitigate access risks", "Review emergency access activity", "Document controls and present the solution"] },
+    ],
+  },
   sap: {
     title: "SAP Online Training — Syllabus",
     accent: "#005BAC", // SAP blue-green

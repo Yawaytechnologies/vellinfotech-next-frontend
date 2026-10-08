@@ -52,6 +52,7 @@ const courses = [
     image: "https://cdn-icons-png.flaticon.com/512/8955/8955275.png",
   },
   { title: "Sap", image: "https://cdn.simpleicons.org/sap" },
+  { title: "SAP Security and GRC", slug: "sap-security-and-grc-course", image: "https://cdn.simpleicons.org/sap" },
   {
     title: "SalesForce",
     image: "https://cdn-icons-png.flaticon.com/512/5968/5968914.png",
@@ -110,7 +111,7 @@ export default function AllJobCoursesSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {courses.map((course, index) => (
           <Link
-            href={`/all-courses/${encodeURIComponent(course.title)}`}
+            href={`/all-courses/${course.slug || encodeURIComponent(course.title)}`}
             key={index}
             className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-all cursor-pointer"
           >

@@ -270,6 +270,22 @@ export default function Footer() {
                   Cyber Security
                 </a>
               </li>
+              <li>
+                <a
+                  href="/all-courses/artificial-intelligence-and-gen-ai-course"
+                  className="hover:text-[#005BAC] font-bold"
+                >
+                  Generative AI
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/all-courses/data-science-training-course"
+                  className="hover:text-[#005BAC] font-bold"
+                >
+                  Data Science
+                </a>
+              </li>
             </ul>
           </div>
 

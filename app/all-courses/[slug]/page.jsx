@@ -20,6 +20,7 @@ import DevOps from "../../../components/Courses/DevOps";
 import ServiceNow from "../../../components/Courses/ServiceNow";
 import SalesForce from "../../../components/Courses/SalesForce";
 import Sap from "../../../components/Courses/Sap";
+import SapSecurityGrc from "../../../components/Courses/SapSecurityGrc";
 import CyberSecurity from "../../../components/Courses/CyberSecurity";
 import HardwareNetworking from "../../../components/Courses/HardwareNetworking";
 import ProductManagement from "../../../components/Courses/ProductManagement";
@@ -193,6 +194,12 @@ const COURSE_MAP = {
       "Gain hands-on SAP skills across key modules with Vell InfoTech's SAP Training Program — designed for freshers and professionals seeking SAP careers in Chennai.",
     keywords:
       "SAP training chennai, SAP course, SAP FICO training, SAP certification chennai",
+  },
+  "sap-security-and-grc-course": {
+    component: SapSecurityGrc,
+    title: "SAP Security and GRC Course in Chennai",
+    description: "Learn SAP Security and GRC with hands-on training in user administration, roles, authorizations, access risk analysis, and compliance at Vell InfoTech in Chennai.",
+    keywords: "SAP Security and GRC course, SAP security training Chennai, SAP GRC training, SAP authorizations",
   },
   "cyber-security-course": {
     component: CyberSecurity,
